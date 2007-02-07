@@ -1,10 +1,10 @@
 ===------------------------------------------------------------------------------===
-	    ANATHEMA v1.0 "LAP"
+	    ANATHEMA v1.1 "MERU"
 ===------------------------------------------------------------------------------===
 
 Anathema Read Me
-(C) 2004-2006 by Sandra Sieroux and Urs Reupke
-Exalted (C) 2001-2006 by White Wolf Publishing, Inc.
+(C) 2004-2007 by Sandra Sieroux and Urs Reupke
+Exalted (C) 2001-2007 by White Wolf Publishing, Inc.
 http://anathema.sf.net
 
 ===------------------------------------------------------------------------------===

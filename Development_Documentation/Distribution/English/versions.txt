@@ -1,10 +1,10 @@
 Anathema Version History
-(C) 2004 - 2006 by Sandra Sieroux and Urs Reupke
+(C) 2004 - 2007 by Sandra Sieroux and Urs Reupke
 Exalted (C) 2001-2006 by White Wolf Publishing, Inc.
 http://anathema.sf.net
 
 ===------------------------------------------------------------------------------===
-			Release 1.01 "" (Upcoming)
+			Release 1.1 "Meru" (11/02/07)
 ===------------------------------------------------------------------------------===
 -- ATTENTION --
 From this version onward, Anathema requires Java 6 or later.
