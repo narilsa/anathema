@@ -13,7 +13,6 @@
 
 	<taskdef name="install4j" classname="com.install4j.Install4JTask" classpath="${install4j.dir}\bin\ant.jar" />
 
-
 	<target name="Distribute" depends="Build Bootloader, Build Plugins, Copy Text, Build Windows executable, Compile Installer" />
 
 	<target name="Compile Installer">
