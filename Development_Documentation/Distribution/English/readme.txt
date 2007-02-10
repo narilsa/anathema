@@ -93,10 +93,14 @@ Thanks for helping us improve!
 
 Known Issues:
 ---------------------
-The "Merits and Flaws" tab changes size when items are selected.
+-The "Merits and Flaws" tab changes size when items are selected.
 
-A problem has been reported with saving equipment to the database,
+-A problem has been reported with saving equipment to the database,
 but it appears to be quite elusive. Please contact us should you encounter this bug.
+
+-"Start Maximized" doesn't work on some Linux systems.
+
+-"Open PDF after printing" doesn't work on Windows Vista with Adobe Reader 8.
 
 See versions.txt for a history of bugs fixed.
 
