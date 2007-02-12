@@ -19,6 +19,8 @@ import net.sf.anathema.framework.repository.access.SingleFileWriteAccess;
 import net.sf.anathema.framework.repository.access.printname.IPrintNameFileAccess;
 import net.sf.anathema.framework.repository.access.printname.PrintNameFileAccess;
 import net.sf.anathema.framework.view.PrintNameFile;
+import net.sf.anathema.lib.control.change.ChangeControl;
+import net.sf.anathema.lib.control.change.IChangeListener;
 
 public class Repository implements IRepository {
 
@@ -26,6 +28,7 @@ public class Repository implements IRepository {
   private final File repositoryFolder;
   private final File defaultDataFolder;
   private final RepositoryFileResolver resolver;
+  private final ChangeControl control = new ChangeControl();
 
   public Repository(File repositoryFolder, IItemMangementModel itemManagement) {
     Ensure.ensureArgumentTrue("Repositoryfolder must exist.", repositoryFolder.exists()); //$NON-NLS-1$
@@ -164,9 +167,20 @@ public class Repository implements IRepository {
   public void deleteAssociatedItem(PrintNameFile file) throws RepositoryException {
     try {
       FileUtilities.deleteFileOrDirectory(file.getFile());
+      refresh();
     }
     catch (IOException e) {
       throw new RepositoryException("Deletion failed.", e); //$NON-NLS-1$
     }
+  }
+
+  @Override
+  public void addRefreshListener(IChangeListener listener) {
+    control.addChangeListener(listener);
+  }
+
+  @Override
+  public void refresh() {
+    control.fireChangedEvent();
   }
 }
