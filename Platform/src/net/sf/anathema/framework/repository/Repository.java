@@ -147,11 +147,11 @@ public class Repository implements IRepository {
   }
 
   public boolean containsClosed(IItemType... types) {
-    int closedObjects = 0;
+    boolean hasClosed = false;
     for (IItemType type : types) {
-      closedObjects += printNameFileAccess.collectClosedPrintNameFiles(type).length;
+      hasClosed |= printNameFileAccess.collectClosedPrintNameFiles(type).length > 0;
     }
-    return closedObjects > 0;
+    return hasClosed;
   }
 
   public File getDataBaseDirectory(String subfolder) {
