@@ -114,7 +114,7 @@
     <prerequisite>
       <essence id="Essence" value="1"/>
       <trait id="Bureaucracy" value="2"/>
-      <charmReference id="Dragon-Blooded.TerrestrialBureaucracyReinforcement"/>
+      <charmReference id="Dragon-Blooded.TerrestrialReinforcement.Bureaucracy"/>
     </prerequisite>
     <cost>
       <temporary>
