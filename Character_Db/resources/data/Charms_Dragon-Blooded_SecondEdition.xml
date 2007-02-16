@@ -155,7 +155,7 @@
     </cost>
     <duration duration="LessOfTaskOr3Months"/>
     <charmtype type="Simple">
-	  <special speed="6" turntype="DramaticAction" defense="-1"/>
+	  <special speed="1" turntype="DramaticAction" defense="-1"/>
 	</charmtype>
     <charmAttribute attribute="Compulsion" visualize="true"/>
     <charmAttribute attribute="Social" visualize="true"/>
