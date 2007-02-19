@@ -99,7 +99,6 @@
 	</extension>
 	<extension plugin-id="net.sf.anathema.core"	point-id="AnathemaResources" id="Resources">
 		<parameter id="bundle" value="Backgrounds"/>
-		<parameter id="bundle" value="Castes"/>
 		<parameter id="bundle" value="Character"/>
 		<parameter id="bundle" value="CharacterControl"/>
 		<parameter id="bundle" value="CharacterModule"/>
