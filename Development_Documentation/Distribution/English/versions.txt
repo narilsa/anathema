@@ -11,8 +11,10 @@ Changes to: Solar, Platform (3284), Martial Arts, Charmgroups.
 * Spirit-Cutting Attack now combos with all abilities (Bug 1657432, found by Xanatos)
 * Wonder-Forging Genius is multi-learnable. (Found by Ashtear Hinoarashi)
 * Anathema starts from paths containing umlauts (Bug 1662453)
+* "Open after print" now works in Windows Vista
 + Added Terrestrial Hero Style
 + Updated the first three pages of spells from White Treatise
+
 
 ===------------------------------------------------------------------------------===
 			Release 1.1 "Meru" (11/02/07)
