@@ -6,9 +6,10 @@ http://anathema.sf.net
 ===------------------------------------------------------------------------------===
 			Release 1.1.1 
 ===------------------------------------------------------------------------------===
-Changes to: Solar, Platform (3284).
+Changes to: Solar, Platform (3284), Martial Arts, Charmgroups.
 * Load buttons are now sensitive to actions taken in the repository browser (Bug 1657791, found by bartkusa)
 * Spirit-Cutting Attack now combos with all abilities (Bug 1657432, found by Xanatos)
+* Wonder-Forging Genius is multi-learnable. (Found by Ashtear Hinoarashi)
 * Anathema starts from paths containing umlauts (Bug 1662453)
 
 ===------------------------------------------------------------------------------===
