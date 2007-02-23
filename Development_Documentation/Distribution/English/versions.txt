@@ -7,13 +7,15 @@ http://anathema.sf.net
 			Release 1.1.1 
 ===------------------------------------------------------------------------------===
 Changes to: Solar, Platform (3284), Martial Arts, Charmgroups.
+* Tagged equipment items from version 1.0 no longer break the program.
 * Load buttons are now sensitive to actions taken in the repository browser (Bug 1657791, found by bartkusa)
-* Spirit-Cutting Attack now combos with all abilities (Bug 1657432, found by Xanatos)
-* Wonder-Forging Genius is multi-learnable. (Found by Ashtear Hinoarashi)
 * Anathema starts from paths containing umlauts (Bug 1662453)
-* "Open after print" now works in Windows Vista
+* Changing a character's XP makes him saveable now (Found by ECR's Fragg) 
 + Added Terrestrial Hero Style
 + Updated the first three pages of spells from White Treatise
+* Spirit-Cutting Attack now combos with all abilities (Bug 1657432, found by Xanatos)
+* Wonder-Forging Genius is multi-learnable. (Found by Ashtear Hinoarashi)
+* "Open after print" now works in Windows Vista
 
 
 ===------------------------------------------------------------------------------===
