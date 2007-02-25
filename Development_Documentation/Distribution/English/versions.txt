@@ -6,9 +6,10 @@ http://anathema.sf.net
 ===------------------------------------------------------------------------------===
 			Release 1.1.1 "Patch 1" (24/02/07)
 ===------------------------------------------------------------------------------===
-* Tagged equipment from version 1.0 no longer breaks the program. (Bug 1657429, found by Xanatos and uteck)
+* Tagged equipment from version 1.0 no longer breaks the program (Bug 1657429, found by Xanatos and uteck)
 * Terrestrial aspect abilities back online (Bug 1667686)
-* Prevented a possible problem with the "update view" function in equipment.
+* Martial Arts charm cascades update when MA Ability changes
+* Prevented a possible problem with the "update view" function in equipment
 * Load buttons are now sensitive to actions taken in the repository browser (Bug 1657791, found by bartkusa)
 * Anathema starts from paths containing umlauts (Bug 1662453)
 * Changing a character's XP makes him saveable now (Found by ECR's Fragg) 
