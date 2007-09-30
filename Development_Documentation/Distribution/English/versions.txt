@@ -6,10 +6,14 @@ http://anathema.sf.net
 
 
 ===------------------------------------------------------------------------------===
-			Release 1.3.2 "" (Upcoming)
+			Outcaste Release I (22/10/07)
 ===------------------------------------------------------------------------------===
 
--- Bugs Fixed --
+-- Features (Onii) --
+* Support for the Black and White Treatises
+* Spells are filtered by edition. 
+
+-- Bugs Fixed (Urs) --
 * [2E] Corrected Presence-requirement for Authority-Radiating Stance (thanks to Andy Day)
 * [2E] Added translation keys for the various (Element) Charms (thank you,  Scorpio and Gareth)
 * [2E] Added Retainers background for Dynasts, Immaculates and Cheraki (thanks again, Scorpio)
