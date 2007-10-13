@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<ExaltedCharacter repositoryId="CyrusCharacterBlessedIsle" repositoryPrintName="CyrusCharacterBlessedIsle">
+  <Description>
+    <CharacterName><![CDATA[CyrusCharacterBlessedIsle]]></CharacterName>
+    <Player><![CDATA[Cyrus]]></Player>
+    <Periphrase><![CDATA[Well-meaning Necromancer]]></Periphrase>
+    <Notes><![CDATA[Cyrus' Charakter für die Blessed Isle]]></Notes>
+    <Concept><![CDATA[Necromantic priest]]></Concept>
+  </Description>
+  <Statistics experienced="false">
+    <Rules>
+      <RuleSet name="SecondEdition"/>
+    </Rules>
+    <CharacterType subtype="TemplateType.Default">Solar</CharacterType>
+    <CharacterConcept>
+      <Caste type="Twilight"/>
+      <Motivation><![CDATA[Creation den Mortals überlassen.]]></Motivation>
+    </CharacterConcept>
+    <Essence creationValue="4"/>
+    <Willpower creationValue="6"/>
+    <Virtues>
+      <Compassion creationValue="2"/>
+      <Conviction creationValue="4"/>
+      <Temperance creationValue="2"/>
+      <Valor creationValue="1"/>
+    </Virtues>
+    <Attributes>
+      <Physical>
+        <Strength creationValue="2"/>
+        <Dexterity creationValue="3"/>
+        <Stamina creationValue="2"/>
+      </Physical>
+      <Social>
+        <Charisma creationValue="5"/>
+        <Manipulation creationValue="2"/>
+        <Appearance creationValue="2"/>
+      </Social>
+      <Mental>
+        <Perception creationValue="4"/>
+        <Intelligence creationValue="3"/>
+        <Wits creationValue="4"/>
+      </Mental>
+    </Attributes>
+    <Abilities>
+      <Archery creationValue="0"/>
+      <MartialArts creationValue="0"/>
+      <Melee creationValue="0"/>
+      <Thrown creationValue="0"/>
+      <War creationValue="0"/>
+      <Integrity creationValue="1" favored="true"/>
+      <Performance creationValue="3" favored="true"/>
+      <Presence creationValue="1" favored="true"/>
+      <Resistance creationValue="0"/>
+      <Survival creationValue="0"/>
+      <Craft>
+        <subTrait creationValue="4">
+          <traitName><![CDATA[Air]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Earth]]></traitName>
+        </subTrait>
+        <subTrait creationValue="2">
+          <traitName><![CDATA[Fire]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Water]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Wood]]></traitName>
+        </subTrait>
+        <subTrait creationValue="1">
+          <traitName><![CDATA[Necrosurgery]]></traitName>
+        </subTrait>
+      </Craft>
+      <Investigation creationValue="1"/>
+      <Lore creationValue="2"/>
+      <Medicine creationValue="1"/>
+      <Occult creationValue="3"/>
+      <Athletics creationValue="0"/>
+      <Awareness creationValue="3"/>
+      <Dodge creationValue="1"/>
+      <Larceny creationValue="1"/>
+      <Stealth creationValue="1" favored="true"/>
+      <Bureaucracy creationValue="0"/>
+      <Linguistics creationValue="1" favored="true"/>
+      <Ride creationValue="0"/>
+      <Sail creationValue="0"/>
+      <Socialize creationValue="2"/>
+    </Abilities>
+    <Backgrounds>
+      <Background creationValue="1"><![CDATA[Resources - Bettelmönch]]></Background>
+      <Background creationValue="3"><![CDATA[Artifact - Vergessen-Werd-Mantel]]></Background>
+      <Background creationValue="3"><![CDATA[Artifact - Teleportationskreide (Werkstatt)]]></Background>
+    </Backgrounds>
+    <Charms>
+      <CharmGroup name="Stealth" type="Solar">
+        <Charm name="Solar.2ndExcellency.Stealth" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Craft" type="Solar">
+        <Charm name="Solar.1stExcellency.Craft" experienceLearned="false"/>
+        <Charm name="Solar.CraftsmanNeedsNoTools" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Performance" type="Solar">
+        <Charm name="Solar.RespectCommandingAttitude" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Occult" type="Solar">
+        <Charm name="Solar.ShadowlandsCircleNecromancy" experienceLearned="false"/>
+        <Charm name="Solar.TerrestrialCircleSorcery" experienceLearned="false"/>
+      </CharmGroup>
+      <Combos/>
+    </Charms>
+    <Spells>
+      <Spell name="Shadowlands.RaisingSkeletalHorde" experienceLearned="false"/>
+      <Spell name="Shadowlands.WalkingWarMachine" experienceLearned="false"/>
+      <Spell name="Shadowlands.FleshSloughingWave" experienceLearned="false"/>
+    </Spells>
+    <Experience/>
+    <AdditionalModels>
+      <Model templateId="Equipment">
+        <Content>
+          <item>
+            <templateId><![CDATA[Natural]]></templateId>
+            <printedStats><![CDATA[Punch]]></printedStats>
+            <printedStats><![CDATA[Kick]]></printedStats>
+            <printedStats><![CDATA[Clinch]]></printedStats>
+          </item>
+        </Content>
+      </Model>
+      <Model templateId="Specialties">
+        <Content/>
+      </Model>
+      <Model templateId="Craft">
+        <Content/>
+      </Model>
+      <Model templateId="Linguistics">
+        <Content>
+          <linguistics>
+            <language><![CDATA[LowRealm]]></language>
+            <language><![CDATA[HighRealm]]></language>
+          </linguistics>
+        </Content>
+      </Model>
+      <Model templateId="Intimacies">
+        <Content>
+          <Intimacies/>
+        </Content>
+      </Model>
+      <Model templateId="SolarVirtueFlaw">
+        <Content>
+          <VirtueFlaw>
+            <RootVirtue name="Conviction"/>
+          </VirtueFlaw>
+        </Content>
+      </Model>
+    </AdditionalModels>
+  </Statistics>
+</ExaltedCharacter>
