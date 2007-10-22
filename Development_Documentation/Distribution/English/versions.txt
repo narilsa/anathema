@@ -13,6 +13,9 @@ http://anathema.sf.net
 * Support for the Black and White Treatises
 * Spells are filtered by edition. 
 
+-- Features (Urs) --
+* Support for Threshold Outcaste Dragon-Blooded.
+
 -- Bugs Fixed (Urs) --
 * [2E] Corrected Presence-requirement for Authority-Radiating Stance (thanks to Andy Day)
 * [2E] Added translation keys for the various (Element) Charms (thank you,  Scorpio and Gareth)
