@@ -4,6 +4,13 @@ Exalted (C) 2001-2007 by White Wolf Publishing, Inc.
 http://anathema.sf.net
 
 
+===------------------------------------------------------------------------------===
+			Outcaste Release II (upcoming)
+===------------------------------------------------------------------------------===
+
+-- Bugs Fixed (Urs) --
+* [2E] Corrected several Charm names (1819445, all found by Allan)
+
 
 ===------------------------------------------------------------------------------===
 			Outcaste Release I (22/10/07)
