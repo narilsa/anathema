@@ -8,9 +8,13 @@ http://anathema.sf.net
 			Outcaste Release II (upcoming)
 ===------------------------------------------------------------------------------===
 
+Corrected prerequisites for some charms. 
+Characters knowing these charms might not load. 
+Please contact us if you encounter any problems.
+
 -- Bugs Fixed (Urs) --
 * [2E] Corrected several Charm names (1819445, all found by Allan)
-
+* [2E] Corrected prerequisites for Soul-Enlightening Beneficience (1819750, spotted by the Astral Wanderer)
 
 ===------------------------------------------------------------------------------===
 			Outcaste Release I (22/10/07)
