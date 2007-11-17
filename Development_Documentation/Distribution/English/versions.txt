@@ -28,7 +28,7 @@ Please contact us if you encounter any problems.
 * Support for Threshold Outcaste Dragon-Blooded.
 
 -- Bugs Fixed (Urs) --
-* [2E] Corrected Presence-requirement for Authority-Radiating Stance (thanks to Andy Day)
+* [2E] Corrected Presence-requirement for Authority-Radiating Stance (thanks to Andy Day and Tybalt Broods)
 * [2E] Added translation keys for the various (Element) Charms (thank you,  Scorpio and Gareth)
 * [2E] Added Retainers background for Dynasts, Immaculates and Cheraki (thanks again, Scorpio)
 * [2E] Corrected Willpower cost for Drowning Embrace (1807106, found by Allan) 
