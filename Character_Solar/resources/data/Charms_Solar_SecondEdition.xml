@@ -24,7 +24,7 @@
     <genericCharmAttribute attribute="Excellency"/>
     <charmAttribute attribute="Mortal"/>
     <charmAttribute attribute="Combo-OK" visualize="true"/>
-    <source source="SecondEdition" page="183"/>
+    <source source="SecondEdition" />
   </genericCharm>
   <genericCharm id="Solar.2ndExcellency" exalt="Solar">
     <prerequisite>
