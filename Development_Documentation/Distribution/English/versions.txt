@@ -15,6 +15,7 @@ Please contact us if you encounter any problems.
 -- Bugs Fixed (Urs) --
 * [2E] Corrected several Charm names (All found by Allan Morstein)
 * [2E] Corrected prerequisites for Soul-Enlightening Beneficience (1819750, spotted by the Astral Wanderer)
+* [2E] Snake Form no longer Combo-OK
 
 ===------------------------------------------------------------------------------===
 			Outcaste Release I (22/10/07)
