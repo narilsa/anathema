@@ -114,8 +114,8 @@
             </Categories>
           </Special>
         </Charm>
-        <Charm name="Solar.Body-MendingMeditation" experienceLearned="false"/>
         <Charm name="Solar.BattleFuryFocus" experienceLearned="false"/>
+        <Charm name="Solar.Body-MendingMeditation" experienceLearned="false"/>
       </CharmGroup>
       <Combos>
         <Combo experienceLearned="false">
@@ -130,6 +130,9 @@
     <Experience>
       <Entry points="5">
         <Description><![CDATA[Echsen in der Steppe, Tote Scavenger, Kampf im Nebel]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Erkundung der Höhle, Bubbles, Entdeckung des Brückendrachen]]></Description>
       </Entry>
     </Experience>
     <AdditionalModels>
