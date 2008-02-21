@@ -21,6 +21,7 @@ Please contact us if you encounter any problems.
 * [2E] Snake Form no longer Combo-OK
 * [2E] Fixed a bug where a separator was missing in the Charm Viewer (found by Jontu Kontar)
 * Relaxed restrictions on timing and defense data in Charm-XML (per request of Jontu Kontar)
+* Long specialty names no longer push the dots out of the screen (found by Rahod) 
 
 ===------------------------------------------------------------------------------===
 			Outcaste Release I (22/10/07)
