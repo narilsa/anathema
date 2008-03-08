@@ -14,6 +14,7 @@ Please contact us if you encounter any problems.
 
 -- Features (Thraxis) --
 * [2E] Lookshy character templates
+* Background Dot XP cost is now configurable, as requested by the Binary Phantom
 
 -- Bugs Fixed (Urs) --
 * [2E] Corrected several Charm names (All found by Allan Morstein)
