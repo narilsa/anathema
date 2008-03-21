@@ -1,10 +1,10 @@
 ===------------------------------------------------------------------------------===
-	    ANATHEMA v1.3 "OPAL SPIRE"
+	    ANATHEMA v1.3.1 "OUTCASTE R2"
 ===------------------------------------------------------------------------------===
 
 Anathema Read Me
-(C) 2004-2007 by Sandra Sieroux and Urs Reupke
-Exalted (C) 2001-2007 by White Wolf Publishing, Inc.
+(C) 2004-2008 by Sandra Sieroux and Urs Reupke
+Exalted (C) 2001-2008 by White Wolf Publishing, Inc.
 http://anathema.sf.net
 
 ===------------------------------------------------------------------------------===

@@ -1,11 +1,11 @@
 Anathema Version History
-(C) 2004 - 2007 by Sandra Sieroux and Urs Reupke
-Exalted (C) 2001-2007 by White Wolf Publishing, Inc.
+(C) 2004 - 2008 by Sandra Sieroux and Urs Reupke
+Exalted (C) 2001-2008 by White Wolf Publishing, Inc.
 http://anathema.sf.net
 
 
 ===------------------------------------------------------------------------------===
-			Outcaste Release II (upcoming)
+			Outcaste Release II (21/03/08)
 ===------------------------------------------------------------------------------===
 
 Corrected prerequisites for some charms. 
@@ -14,6 +14,8 @@ Please contact us if you encounter any problems.
 
 -- Features (Thraxis) --
 * [2E] Lookshy character templates
+
+-- Features (Urs) --
 * Background Dot XP cost is now configurable, as requested by the Binary Phantom
 
 -- Bugs Fixed (Urs) --
