@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<charmlist>
+  <!-- Solar Archery -->
+  <charm id="Solar.ThereIsNoWind" exalt="Solar" group="Archery">
+    <prerequisite>
+      <essence id="Essence" value="1"/>
+      <trait id="Archery" value="1"/>
+      <charmAttributeRequirement attribute="ExcellencyArchery" count="1"/>
+    </prerequisite>
+    <cost>
+      
+        <essence cost="3" text="or 5 motes"/>
+      
+    </cost>
+    <duration duration="Instant"/>
+    <charmtype type="Supplemental"/>
+    <charmAttribute attribute="Combo-OK" visualize="true"/>
+    <source source="SecondEdition" page="187"/>
+  </charm>
+  <charm id="Solar.AccuracyWithoutDistance" exalt="Solar" group="Archery">
+    <prerequisite>
+      <essence id="Essence" value="3"/>
+      <trait id="Archery" value="5"/>
+      <charmReference id="Solar.ThereIsNoWind"/>
+    </prerequisite>
+    <cost>
+      
+        <essence cost="1"/>
+        <willpower cost="1"/>
+      
+    </cost>
+    <duration duration="Instant"/>
+    <charmtype type="Supplemental"/>
+    <charmAttribute attribute="Combo-OK" visualize="true"/>
+    <charmAttribute attribute="Obvious" visualize="true"/>
+    <source source="SecondEdition" page="187"/>
+  </charm>
+  <charm id="Solar.ForcefulArrow" exalt="Solar" group="Archery">
+    <prerequisite>
+      <essence id="Essence" value="2"/>
+      <trait id="Archery" value="4"/>
+      <charmReference id="Solar.ThereIsNoWind"/>
+    </prerequisite>
+    <cost>
+      
+        <essence cost="3"/>
+      
+    </cost>
+    <duration duration="Instant"/>
+    <charmtype type="Supplemental"/>
+    <charmAttribute attribute="Combo-OK" visualize="true"/>
+    <charmAttribute attribute="Obvious" visualize="true"/>
+    <charmAttribute attribute="Knockback" visualize="true"/>
+    <source source="SecondEdition" page="187"/>
+  </charm>  
+</charmlist>
