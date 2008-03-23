@@ -15,10 +15,12 @@ import net.sf.anathema.character.generic.magic.ICharm;
 import net.sf.anathema.character.generic.magic.charms.CharmException;
 import net.sf.anathema.character.generic.rules.IExaltedRuleSet;
 import net.sf.anathema.character.generic.traits.ITraitType;
+import net.sf.anathema.character.generic.type.CharacterType;
 import net.sf.anathema.character.generic.type.ICharacterType;
 import net.sf.anathema.lib.collection.Table;
 import net.sf.anathema.lib.exception.PersistenceException;
 import net.sf.anathema.lib.registry.IIdentificateRegistry;
+import net.sf.anathema.lib.registry.IdentificateRegistry;
 import net.sf.anathema.lib.util.IIdentificate;
 
 import org.dom4j.Document;
@@ -33,8 +35,9 @@ public class CharmCompiler {
   private final IIdentificateRegistry<ICharacterType> registry;
   private final SAXReader reader;
 
-  public CharmCompiler(IIdentificateRegistry<ICharacterType> registry) {
-    this.registry = registry;
+  public CharmCompiler() {
+    this.registry = new IdentificateRegistry<ICharacterType>();
+    registry.add(CharacterType.values()); //$NON-NLS-1$
     this.reader = new SAXReader();
   }
 
