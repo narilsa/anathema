@@ -70,16 +70,26 @@ public class CharmCompiler {
         CharmCache.getInstance().cloneCharms(basicRules, rules);
       }
       for (ICharacterType type : registry.getAll()) {
-        buildCharms(type, rules, setBuilder);
+        buildStandardCharms(type, rules);
         buildGenericCharms(type, rules);
         buildCharmAlternatives(type, rules);
       }
-      buildCharms(MARTIAL_ARTS, rules, setBuilder);
+      buildStandardCharms(MARTIAL_ARTS, rules);
       buildCharmAlternatives(MARTIAL_ARTS, rules);
     }
     for (ExaltedRuleSet rules : ExaltedRuleSet.values()) {
       extractParents(CharmCache.getInstance().getCharms(rules));
     }
+  }
+
+  private List<ICharm> buildStandardCharms(IIdentificate type, ExaltedRuleSet rules) throws PersistenceException {
+    return buildCharms(type, rules, setBuilder);
+  }
+
+  private List<ICharm> buildGenericCharms(ICharacterType type, ExaltedRuleSet rules) throws PersistenceException {
+    ITraitType[] primaryTypes = type.getFavoringTraitType().getTraitTypes(rules.getEdition());
+    genericBuilder.setTypes(primaryTypes);
+    return buildCharms(type, rules, genericBuilder);
   }
 
   private void buildCharmAlternatives(IIdentificate type, ExaltedRuleSet rules) {
@@ -88,12 +98,6 @@ public class CharmCompiler {
         alternativeBuilder.buildAlternatives(charmDocument, CharmCache.getInstance().getCharms(type, rules));
       }
     }
-  }
-
-  private List<ICharm> buildGenericCharms(ICharacterType type, ExaltedRuleSet rules) throws PersistenceException {
-    ITraitType[] primaryTypes = type.getFavoringTraitType().getTraitTypes(rules.getEdition());
-    genericBuilder.setTypes(primaryTypes);
-    return buildCharms(type, rules, genericBuilder);
   }
 
   private List<ICharm> buildCharms(IIdentificate type, IExaltedRuleSet rules, ICharmSetBuilder builder)
