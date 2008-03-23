@@ -94,6 +94,9 @@ Thanks for helping us improve!
 
 Known Issues:
 ---------------------
+-Outcaste DB with the Breeding Background pay more than they should if Breeding is not the first item
+on the list. 
+
 -The "Merits and Flaws" tab changes size when items are selected.
 
 -A problem has been reported with saving equipment to the database,
