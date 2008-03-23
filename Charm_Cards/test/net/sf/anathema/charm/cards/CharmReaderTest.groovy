@@ -6,14 +6,14 @@ class CharmReaderTest extends GroovyTestCase {
     def file = new File('B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/Three_Sample_Charms.xml')
     
 	void testReturnsEmptyList() {
-		assertEquals(0, new CharmReader().read(null).size);
+		assert new CharmReader().read(null).size == 0
 	}
 	
 	void testFillsListFromSampleFile() {
-		assertEquals(3, new CharmReader().read(file).size);
+		assert new CharmReader().read(file).size == 3
 	}
 	
 	void testReturnsInstancesOfCharmFromSampleFile() {
-	  new CharmReader().read(file).each {charm -> assertTrue(charm instanceof ICharm)};	  
+	  new CharmReader().read(file).each {charm -> assert charm instanceof ICharm};	  
 	}
 }

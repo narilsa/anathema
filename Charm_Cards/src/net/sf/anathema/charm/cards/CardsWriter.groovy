@@ -1,8 +1,15 @@
 package net.sf.anathema.charm.cards
 
-class CardsWriter {
+import groovy.xml.MarkupBuilderclass CardsWriter {
 	
-  def write(){
-   "<cards></cards>"
+  def write(def charms){
+    def writer = new StringWriter()
+    def xml = new MarkupBuilder(writer)
+    xml.cards(){
+      charms.each{
+        card()
+      }
+    }
+    writer.toString()    
   }
 }
