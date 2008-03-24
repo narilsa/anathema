@@ -9,4 +9,19 @@ class CardXmlSamples {
       <card />
     </cards>
   '''
+  
+  static def MULTICARD= '''
+    <cards>
+      <card />
+      <card />
+    </cards>
+  '''
+  
+  static def NAMED_CARD= '''
+    <cards>
+      <card>
+        <name>testId</name>
+      </card>
+    </cards>
+  '''
 }

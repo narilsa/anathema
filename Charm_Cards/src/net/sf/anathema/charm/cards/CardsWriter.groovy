@@ -1,13 +1,16 @@
 package net.sf.anathema.charm.cards
 
-import groovy.xml.MarkupBuilderclass CardsWriter {
+import groovy.xml.MarkupBuilderimport net.sf.anathema.character.generic.magic.ICharm
+class CardsWriter {
 	
-  def write(def charms){
+  def write(ICharm[] charms){
     def writer = new StringWriter()
     def xml = new MarkupBuilder(writer)
     xml.cards(){
-      charms.each{
-        card()
+      charms.each{charm->
+        card(){
+          name(charm.getId())
+        }
       }
     }
     writer.toString()    
