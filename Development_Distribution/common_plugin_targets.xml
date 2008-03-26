@@ -84,7 +84,7 @@
 	
 	<target name="groovyBuilder">
 		<getSourcepath property="path" workspace="${workspace.dir}" projectName="${project.name}" allowMultipleFolders="true" />
-		<groovyc classpath="${classpath}" srcdir="${path}" destdir="${class.dir}" verbose="true" listfiles="true">
+		<groovyc classpath="${classpath}" srcdir="${path}" destdir="${class.dir}" listfiles="true">
 			<javac target="1.5" debug="true" />
 		</groovyc>
 	</target>
