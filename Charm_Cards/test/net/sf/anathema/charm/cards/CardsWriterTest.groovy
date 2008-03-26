@@ -3,7 +3,8 @@ package net.sf.anathema.charm.cards;
 import net.sf.anathema.charm.cards.CardsWriter
 import net.sf.anathema.character.generic.magic.ICharm
 import org.custommonkey.xmlunit.XMLUnit
-import org.custommonkey.xmlunit.Diffimport net.sf.anathema.character.generic.magic.ICharmimport net.sf.anathema.dummy.character.magic.DummyCharmimport org.custommonkey.xmlunit.DifferenceListener
+import org.custommonkey.xmlunit.Diffimport net.sf.anathema.character.generic.magic.ICharmimport org.custommonkey.xmlunit.DifferenceListener
+
 class CardsWriterTest extends GroovyTestCase {
   
 	void testWritesEmptyCardsList() {
@@ -13,7 +14,7 @@ class CardsWriterTest extends GroovyTestCase {
 	
 	void testWritesSingleCardForSingleCharm(){
 	  XMLUnit.setIgnoreWhitespace(true)
-	  String charmXml = new CardsWriter().write(new DummyCharm("testId"))
+	  String charmXml = new CardsWriter().write(createCharm("testId") )
 	  Diff diff = new Diff(charmXml, CardXmlSamples.SINGLECARD)
 	  DifferenceListener listener = new LayerDifferenceListener() 
 	  diff.overrideDifferenceListener(listener)
@@ -22,7 +23,7 @@ class CardsWriterTest extends GroovyTestCase {
 	
 	void testMultipleCardsForMultipleObjects(){
 	  XMLUnit.setIgnoreWhitespace(true)
-	  ICharm[] charms  = [new DummyCharm("testId"), new DummyCharm("toastId")]
+	  ICharm[] charms  = [createCharm("testId"), createCharm("toastId")]
 	  String charmXml = new CardsWriter().write(charms)
 	  Diff diff = new Diff(charmXml, CardXmlSamples.MULTICARD)
 	  DifferenceListener listener = new LayerDifferenceListener() 
@@ -32,7 +33,11 @@ class CardsWriterTest extends GroovyTestCase {
 	
 	void testWritesIdInPlaceOfName(){
 	  XMLUnit.setIgnoreWhitespace(true)
-	  String charmXml = new CardsWriter().write(new DummyCharm("testId"))
+	  String charmXml = new CardsWriter().write(createCharm("testId"))
 	  assert new Diff(charmXml, CardXmlSamples.NAMED_CARD).similar()
+	}
+	
+	ICharm createCharm(String id){
+	  [getId:{id}] as ICharm
 	}
 }
