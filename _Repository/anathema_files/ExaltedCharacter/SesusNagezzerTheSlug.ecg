@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<ExaltedCharacter repositoryId="SesusNagezzerTheSlug" repositoryPrintName="Sesus Nagezzer, The Slug">
+  <Description>
+    <CharacterName><![CDATA[Sesus Nagezzer, The Slug]]></CharacterName>
+    <PhysicalDescription><![CDATA[You are an enormously fat man dressed in brown robes and layered silk kimonos. ...]]></PhysicalDescription>
+    <Concept><![CDATA[Patriotic Schemer]]></Concept>
+  </Description>
+  <Statistics experienced="true">
+    <Rules>
+      <RuleSet name="SecondEdition"/>
+    </Rules>
+    <CharacterType subtype="TemplateType.Default">Dragon-Blooded</CharacterType>
+    <CharacterConcept>
+      <Caste type="Wood"/>
+      <Motivation><![CDATA[To serve his realm and empress]]></Motivation>
+    </CharacterConcept>
+    <Essence creationValue="4"/>
+    <Willpower creationValue="7"/>
+    <Virtues>
+      <Compassion creationValue="2"/>
+      <Conviction creationValue="4"/>
+      <Temperance creationValue="1"/>
+      <Valor creationValue="3"/>
+    </Virtues>
+    <Attributes>
+      <Physical>
+        <Strength creationValue="2"/>
+        <Dexterity creationValue="1"/>
+        <Stamina creationValue="4"/>
+      </Physical>
+      <Social>
+        <Charisma creationValue="4"/>
+        <Manipulation creationValue="5"/>
+        <Appearance creationValue="1"/>
+      </Social>
+      <Mental>
+        <Perception creationValue="4"/>
+        <Intelligence creationValue="3"/>
+        <Wits creationValue="3"/>
+      </Mental>
+    </Attributes>
+    <Abilities>
+      <Linguistics creationValue="0"/>
+      <Lore creationValue="3"/>
+      <Occult creationValue="0"/>
+      <Stealth creationValue="0"/>
+      <Thrown creationValue="0"/>
+      <Awareness creationValue="3"/>
+      <Craft>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Air]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Earth]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Fire]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Water]]></traitName>
+        </subTrait>
+        <subTrait creationValue="0">
+          <traitName><![CDATA[Wood]]></traitName>
+        </subTrait>
+      </Craft>
+      <Integrity creationValue="2"/>
+      <Resistance creationValue="4"/>
+      <War creationValue="2"/>
+      <Athletics creationValue="0"/>
+      <Dodge creationValue="0"/>
+      <Melee creationValue="2"/>
+      <Presence creationValue="4" favored="true">
+        <Specialty creationValue="1" name="Command"/>
+      </Presence>
+      <Socialize creationValue="5" favored="true"/>
+      <Bureaucracy creationValue="4"/>
+      <Investigation creationValue="4" favored="true"/>
+      <Larceny creationValue="3">
+        <Specialty creationValue="2" name="Drugs and Vice"/>
+      </Larceny>
+      <MartialArts creationValue="3"/>
+      <Sail creationValue="0"/>
+      <Archery creationValue="2"/>
+      <Medicine creationValue="2"/>
+      <Performance creationValue="3"/>
+      <Ride creationValue="2"/>
+      <Survival creationValue="0"/>
+    </Abilities>
+    <Backgrounds>
+      <Background creationValue="3"><![CDATA[Artifact]]></Background>
+      <Background creationValue="3"><![CDATA[Breeding]]></Background>
+      <Background creationValue="5"><![CDATA[Command]]></Background>
+      <Background creationValue="2"><![CDATA[Connections (Guild)]]></Background>
+      <Background creationValue="3"><![CDATA[Allies]]></Background>
+      <Background creationValue="2"><![CDATA[Connections (Merchant Marine)]]></Background>
+      <Background creationValue="4"><![CDATA[Connections (Outlaws)]]></Background>
+      <Background creationValue="3"><![CDATA[Connections (Threshold)]]></Background>
+      <Background creationValue="2"><![CDATA[Henchmen]]></Background>
+      <Background creationValue="4"><![CDATA[Manse]]></Background>
+      <Background creationValue="5"><![CDATA[Resources]]></Background>
+    </Backgrounds>
+    <Charms>
+      <CharmGroup name="Archery" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.2ndExcellency.Archery" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.1stExcellency.Archery" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Bureaucracy" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.1stExcellency.Bureaucracy" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.Geese-Flying-SouthAdministration" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.3rdExcellency.Bureaucracy" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.2ndExcellency.Bureaucracy" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.ConfluenceSavantThought" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.BenevolentMaster'sBlessing" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.TerrestrialReinforcement.Bureaucracy" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Investigation" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.RevelationAssociatesHunch" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.FalsehoodUnearthingAttitude" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.1stExcellency.Investigation" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.ScentCrimeMethod" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Larceny" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.1stExcellency.Larceny" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.3rdExcellency.Larceny" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.2ndExcellency.Larceny" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.ObserverAwarenessMethod" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Presence" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.1stExcellency.Presence" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.GlowingCoalRadiance" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Resistance" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.Ox-BodyTechnique" experienceLearned="false">
+          <Special>
+            <Categories>
+              <Category.-1-2 creationValue="4"/>
+            </Categories>
+          </Special>
+        </Charm>
+      </CharmGroup>
+      <CharmGroup name="Socialize" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.WaryYellowDogAttitude" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.3rdExcellency.Socialize" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.1stExcellency.Socialize" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.Sweeten-the-TapMethod" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.Brother-Against-BrotherInsinuation" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.Warm-FacedSeductionStyle" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.Smoothing-over-the-PastTechnique" experienceLearned="false"/>
+        <Charm name="Dragon-Blooded.2ndExcellency.Socialize" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="TerrestrialInitiation" type="Dragon-Blooded">
+        <Charm name="Dragon-Blooded.MomentDanaad" experienceLearned="true"/>
+        <Charm name="Dragon-Blooded.PasiapsHumility" experienceLearned="true"/>
+      </CharmGroup>
+      <CharmGroup name="WoodDragonStyle" type="Dragon-Blooded">
+        <Charm name="Celestial.MindOverBodyMeditation" experienceLearned="true"/>
+        <Charm name="Celestial.WoodDragonVitality" experienceLearned="true"/>
+        <Charm name="Celestial.EyesOfTheWoodDragon" experienceLearned="true"/>
+      </CharmGroup>
+      <Combos/>
+    </Charms>
+    <Spells/>
+    <Experience/>
+    <AdditionalModels>
+      <Model templateId="Equipment">
+        <Content>
+          <item>
+            <templateId><![CDATA[Natural]]></templateId>
+            <printedStats><![CDATA[Punch]]></printedStats>
+          </item>
+          <item>
+            <templateId><![CDATA[Dragon's Fang]]></templateId>
+            <printedStats><![CDATA[Close]]></printedStats>
+          </item>
+        </Content>
+      </Model>
+      <Model templateId="Specialties">
+        <Content/>
+      </Model>
+      <Model templateId="Craft">
+        <Content/>
+      </Model>
+      <Model templateId="Linguistics">
+        <Content>
+          <linguistics>
+            <language><![CDATA[GuildCant]]></language>
+            <language><![CDATA[HighRealm]]></language>
+            <language><![CDATA[Riverspeak]]></language>
+          </linguistics>
+        </Content>
+      </Model>
+      <Model templateId="Intimacies">
+        <Content>
+          <Intimacies/>
+        </Content>
+      </Model>
+      <Model templateId="Db.VirtueFlaw.Template">
+        <Content>
+          <VirtueFlaw>
+            <RootVirtue name="Conviction"/>
+          </VirtueFlaw>
+        </Content>
+      </Model>
+    </AdditionalModels>
+  </Statistics>
+</ExaltedCharacter>
