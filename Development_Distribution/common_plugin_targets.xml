@@ -81,6 +81,13 @@
 		<getSourcepath property="path" workspace="${workspace.dir}" projectName="${project.name}" allowMultipleFolders="true" />
 		<javac classpath="${classpath}" srcdir="${path}" destdir="${class.dir}" target="1.5" debug="true" />
 	</target>
+	
+	<target name="groovyBuilder">
+		<getSourcepath property="path" workspace="${workspace.dir}" projectName="${project.name}" allowMultipleFolders="true" />
+		<groovyc classpath="${classpath}" srcdir="${path}" destdir="${class.dir}" verbose="true" listfiles="true">
+			<javac target="1.5" debug="true" />
+		</groovyc>
+	</target>
 
 	<target name="default-builder" />
 
@@ -104,7 +111,7 @@
 				</or>
 			</and>
 			<then>
-				<copy file="${classpath.entry}" todir="${libraries.dir}" overwrite="true" />
+				<copy file="${classpath.entry}" todir="${libraries.dir}" overwrite="false" />
 			</then>
 		</if>
 	</target>
