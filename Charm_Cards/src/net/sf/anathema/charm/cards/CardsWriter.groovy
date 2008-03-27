@@ -18,7 +18,9 @@ import net.sf.anathema.charm.cards.CardsWriterclass CardsWriter {
     xml.cards(){
       charms.each{charm->
         card(){
-          name(charm.getId())
+          name(charm.id)
+          exalt(charm.characterType)
+          ability(charm.primaryTraitType)
         }
       }
     }

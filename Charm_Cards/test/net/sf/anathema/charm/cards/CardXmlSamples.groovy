@@ -17,11 +17,21 @@ class CardXmlSamples {
     </cards>
   '''
   
-  static def NAMED_CARD= '''
+  static def CARD_WITH_NAME= '''
     <cards>
       <card>
         <name>testId</name>
       </card>
     </cards>
   '''
+  
+  static def CARD_WITH_OTHER_NAME= '''
+    <cards>
+      <card>
+        <name>toastId</name>
+      </card>
+    </cards>
+  '''
+  
+ 
 }
