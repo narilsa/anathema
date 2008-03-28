@@ -8,6 +8,7 @@
 	<classpathentry kind="lib" path="/Thirdparty/XML/dom4j-1.5.jar" sourcepath="/Thirdparty/XML/dom4j-src.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="/Thirdparty/Ant/groovy-all-1.5.4.jar"/>
-	<classpathentry kind="lib" path="/Thirdparty/disy/disy-commons-core.jar" sourcepath="/Thirdparty/disy/disy-commons-core-src.zip"/>
+	<classpathentry kind="lib" path="/Thirdparty/disy/disy-commons-core.jar"
+	                sourcepath="/Thirdparty/disy/disy-commons-core-src.zip"/>
 	<classpathentry kind="output" path="bin-groovy"/>
 </classpath>

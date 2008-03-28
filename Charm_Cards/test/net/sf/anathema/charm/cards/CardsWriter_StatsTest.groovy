@@ -1,13 +1,13 @@
 package net.sf.anathema.charm.cards
 
-import net.sf.anathema.character.generic.magic.charms.type.CharmType
-import net.sf.anathema.charm.cards.CardsWriter
-import static net.sf.anathema.charm.cards.DummyCharmFactory.createCharm
-import org.custommonkey.xmlunit.Diff
-import org.custommonkey.xmlunit.XMLUnit
+import net.sf.anathema.character.generic.magic.charms.type.*
+import static net.sf.anathema.charm.cards.DummyCharmFactory.*
+import org.custommonkey.xmlunit.*
 
-class CardsWriter_StatsTest extends GroovyTestCase {
-    static def CARD_WITH_EXTRAACTION = '''
+
+
+
+class CardsWriter_StatsTest extends GroovyTestCase {static def CARD_WITH_EXTRAACTION = '''
     <cards>
       <card>
         <stats>
@@ -17,7 +17,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    static def CARD_WITH_SUPPLEMENTAL = '''
+	static def CARD_WITH_SUPPLEMENTAL = '''
     <cards>
       <card>
         <stats>
@@ -27,7 +27,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    static def CARD_WITH_FULLSIMPLE = '''
+	static def CARD_WITH_FULLSIMPLE = '''
     <cards>
       <card>
         <stats>
@@ -37,7 +37,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    static def CARD_WITH_SPEEDSIMPLE = '''
+	static def CARD_WITH_SPEEDSIMPLE = '''
     <cards>
       <card>
         <stats>
@@ -46,7 +46,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
       </card>
     </cards>
   '''
-    static def CARD_WITH_DVSIMPLE = '''
+	static def CARD_WITH_DVSIMPLE = '''
     <cards>
       <card>
         <stats>
@@ -56,7 +56,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    static def CARD_WITH_FULLREFLEXIVE = '''
+	static def CARD_WITH_FULLREFLEXIVE = '''
     <cards>
       <card>
         <stats>
@@ -66,7 +66,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    static def CARD_WITH_HALFREFLEXIVE = '''
+	static def CARD_WITH_HALFREFLEXIVE = '''
     <cards>
       <card>
         <stats>
@@ -76,49 +76,49 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     </cards>
   '''
 
-    void setUp() {
-        XMLUnit.setIgnoreWhitespace(true)
-    }
+	void setUp(){
+		XMLUnit.ignoreWhitespace = true
+	}
 
-    void testWritesStatsElementWithCharmTypeId() {
-        String testXml = new CardsWriter().write(createCharm([id: "testId"]))
-        assertDifferenceLeniently(CARD_WITH_EXTRAACTION, testXml)
-    }
+	void testWritesStatsElementWithCharmTypeId(){
+		String testXml = new CardsWriter().write(createCharm([id: "testId"]))
+		assertDifferenceLeniently(CARD_WITH_EXTRAACTION, testXml)
+	}
 
-    void testWritesStatsElementWithSupplementalCharmTypeId() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Supplemental]))
-        assertDifferenceLeniently(CARD_WITH_SUPPLEMENTAL, testXml)
-    }
+	void testWritesStatsElementWithSupplementalCharmTypeId(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Supplemental]))
+		assertDifferenceLeniently(CARD_WITH_SUPPLEMENTAL, testXml)
+	}
 
-    void testWritesSimpleTypeWithDVandSpeed() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -2, speed: 5]))
-        assertDifferenceLeniently(CARD_WITH_FULLSIMPLE, testXml)
-    }
+	void testWritesSimpleTypeWithDVandSpeed(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -2, speed: 5]))
+		assertDifferenceLeniently(CARD_WITH_FULLSIMPLE, testXml)
+	}
 
-    void testWritesSimpleTypeWithDV() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -3, speed: 6]))
-        assertDifferenceLeniently(CARD_WITH_DVSIMPLE, testXml)
-    }
+	void testWritesSimpleTypeWithDV(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -3, speed: 6]))
+		assertDifferenceLeniently(CARD_WITH_DVSIMPLE, testXml)
+	}
 
-    void testWritesSimpleTypeWithSpeed() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -1, speed: 3]))
-        assertDifferenceLeniently(CARD_WITH_SPEEDSIMPLE, testXml)
-    }
+	void testWritesSimpleTypeWithSpeed(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -1, speed: 3]))
+		assertDifferenceLeniently(CARD_WITH_SPEEDSIMPLE, testXml)
+	}
 
-    void testWritesReflexiveWithSteps() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 2, step2: 3]))
-        assertDifferenceLeniently(CARD_WITH_FULLREFLEXIVE, testXml)
-    }
+	void testWritesReflexiveWithSteps(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 2, step2: 3]))
+		assertDifferenceLeniently(CARD_WITH_FULLREFLEXIVE, testXml)
+	}
 
-    void testOmitsNullStep() {
-        String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 4]))
-        assertDifferenceLeniently(CARD_WITH_HALFREFLEXIVE, testXml)
-    }
+	void testOmitsNullStep(){
+		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 4]))
+		assertDifferenceLeniently(CARD_WITH_HALFREFLEXIVE, testXml)
+	}
 
-    void assertDifferenceLeniently(controlXml, testXml) {
-        Diff diff = new Diff(controlXml, testXml)
-        diff.overrideDifferenceListener(new LenientDifferenceListener())
-        println diff.toString()
-        assert diff.similar()
-    }
+	void assertDifferenceLeniently(controlXml, testXml){
+		Diff diff = new Diff(controlXml, testXml)
+		diff.overrideDifferenceListener(new LenientDifferenceListener())
+		println diff.toString()
+		assert diff.similar()
+	}
 }
