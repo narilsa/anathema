@@ -5,12 +5,16 @@ import net.sf.anathema.character.generic.type.CharacterType
 import net.sf.anathema.charm.cards.CardsWriter
 import net.sf.anathema.character.generic.magic.ICharm
 import org.custommonkey.xmlunit.XMLUnit
-import org.custommonkey.xmlunit.Diffimport net.sf.anathema.character.generic.magic.ICharmimport org.custommonkey.xmlunit.DifferenceListener
-import net.sf.anathema.character.generic.impl.backgrounds.CharacterTypeBackgroundTemplateimport org.custommonkey.xmlunit.ElementNameQualifier
+import org.custommonkey.xmlunit.Diff
+import net.sf.anathema.character.generic.magic.ICharm
+import org.custommonkey.xmlunit.DifferenceListener
+import net.sf.anathema.character.generic.impl.backgrounds.CharacterTypeBackgroundTemplate
+import org.custommonkey.xmlunit.ElementNameQualifier
+
 class CardsWriterTest extends GroovyTestCase {
-  static def EMPTYLIST = '''
+  static def EMPTYLIST = """
     <cards/>
-  '''
+  """
   
   static def SINGLECARD= '''
     <cards>

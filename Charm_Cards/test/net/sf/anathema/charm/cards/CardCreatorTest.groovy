@@ -1,17 +1,24 @@
 package net.sf.anathema.charm.cards
 
-import net.sf.anathema.charm.cards.CardCreatorimport org.custommonkey.xmlunit.XMLUnitimport org.custommonkey.xmlunit.Diff
-class CardCreatorTest extends GroovyTestCase {
+import net.sf.anathema.charm.cards.CardCreator
+import org.custommonkey.xmlunit.XMLUnit
+import org.custommonkey.xmlunit.Diff
+
+class CardCreatorTest extends GroovyTestCase {
     def input = 'B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/Three_Sample_Charms.xml'
+      def inputFolder = 'B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/folder/'
 	def output = 'B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/Three_Sample_Cards.xml'
 
-	void testWorksWithSingleParameter() {
-		CardCreator.main(input)
-	}
-	    
-	    
-	void testProducesExpectedOutput() {
-		CardCreator.main(input)
+	  void testDoesNotRunWithoutParameters(){
+      CardCreator.main()
+  }
+	
+    void testDoesNotTryToOpenInputIfOnlyOneParameterIsProvided(){
+        CardCreator.main "Missing"
+    }
+
+    void testProducesExpectedOutput() {
+		CardCreator.main input, output
 		File outputFile = new File(output)
 		StringBuilder builder = new StringBuilder()
 		outputFile.eachLine(){
@@ -21,4 +28,16 @@ import net.sf.anathema.charm.cards.CardCreatorimport org.custommonkey.xmlunit.X
 		Diff diff = new Diff(builder.toString(), Three_Sample_Cards.CARDS);
 		assert diff.similar;
 	}
+    
+    void testCreatesCardFileForEveryXmlInSubfolders() {
+		CardCreator.main inputFolder		
+		assert new File(inputFolder, "Cards_One_Sample_Charm.xml").exists()
+		assert new File(inputFolder, "Cards_Two_Sample_Charms.xml").exists()
+	}
+    
+    void tearDown(){
+      new File(output).delete();
+      new File(inputFolder, "Cards_One_Sample_Charm.xml").delete()
+      new File(inputFolder, "Cards_Two_Sample_Charms.xml").delete()
+    }
 }

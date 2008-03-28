@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <project name="Build Card Creator"  default="Build Card Creator">
 
-	<import file="B:\Anathema\outcaste\Development_Distribution\common_distribution_targets.xml" />
-	<import file="B:\Anathema\outcaste\Development_Distribution\common_plugin_targets.xml" />
+    <taskdef resource="net/sf/ant4eclipse/antlib.xml" classpath="" />    
 
-	<property name="project.name" value="Charm_Cards"/>
+    <property name="project.name" value="Charm_Cards"/>
 	<property name="libraries.dir" value="lib"/>
 	<property name="class.dir" value="./build"/>
 	<property name="jar.file" value="cardcreator.jar"/>
 	
 	<target name="Compile">
 		<mkdir dir="${class.dir}" />
-		<getEclipseClasspath property="classpath" workspace="${workspace.dir}" projectName="${project.name}" relative="false" initialiseWorkspace="true" pathSeparator=";" />
 		<groovyc classpath="${classpath}" srcdir="./src" destdir="${class.dir}">
 			<javac target="1.5" debug="true" />
 		</groovyc>
