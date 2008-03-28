@@ -1,18 +1,32 @@
 package net.sf.anathema.charm.cards
+
+import net.sf.anathema.character.generic.impl.magic.charm.type.CharmTypeModel
+import net.sf.anathema.character.generic.impl.magic.charm.type.ReflexiveSpecialsModel
+import net.sf.anathema.character.generic.impl.magic.charm.type.SimpleSpecialsModel
+import net.sf.anathema.character.generic.magic.ICharm
+import net.sf.anathema.character.generic.magic.charms.type.CharmType
+import net.sf.anathema.character.generic.magic.charms.type.ICharmTypeModel
+import net.sf.anathema.character.generic.magic.charms.type.TurnType
 import net.sf.anathema.character.generic.traits.types.AbilityType
 import net.sf.anathema.character.generic.type.CharacterType
-import net.sf.anathema.character.generic.magic.ICharm
 
 class DummyCharmFactory {
-    static ICharm createCharm(String id){
-	  [getId:{id}, getCharacterType:{CharacterType.LUNAR}, getPrimaryTraitType:{AbilityType.Archery}] as ICharm
-	}
-	
-    static ICharm createCharm(AbilityType type){
-	  [getId:{"id"}, getCharacterType:{CharacterType.LUNAR}, getPrimaryTraitType:{type}] as ICharm
-	}
-	
-    static ICharm createCharm(CharacterType type){
-	  [getId:{"id"}, getCharacterType:{type}, getPrimaryTraitType:{AbilityType.Archery}] as ICharm
-	}
+    static ICharm createCharm(Map parameters) {
+        [getId: {parameters.id ?: "id"},
+                getCharacterType: {parameters.character ?: CharacterType.LUNAR},
+                getPrimaryTraitType: {parameters.ability ?: AbilityType.Archery},
+                getCharmTypeModel: {createTypeModel(parameters)}] as ICharm
+    }
+
+    static ICharmTypeModel createTypeModel(parameters) {
+        CharmTypeModel model = new CharmTypeModel()
+        model.setCharmType(parameters.charmType ?: CharmType.ExtraAction)
+        if (parameters.charmType == CharmType.Simple) {
+            model.setSpecialModel(new SimpleSpecialsModel(parameters.speed, TurnType.Tick, parameters.dv))
+        }
+        if (parameters.charmType == CharmType.Reflexive) {
+            model.setSpecialModel(new ReflexiveSpecialsModel(parameters.step1, parameters.step2))
+        }
+        model
+    }
 }
