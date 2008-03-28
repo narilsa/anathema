@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<project name="Build Card Creator"  default="Build Card Creator">
+<project name="Build Card Creator" default="Build Card Creator">
 
-    <taskdef resource="net/sf/ant4eclipse/antlib.xml" classpath="" />    
+	<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpath="lib/groovy-all-1.5.4.jar"/>
 
-    <property name="project.name" value="Charm_Cards"/>
-	<property name="libraries.dir" value="lib"/>
-	<property name="class.dir" value="./build"/>
+	<property name="library.dir" value="lib"/>
+	<property name="class.dir" value="build"/>
 	<property name="jar.file" value="cardcreator.jar"/>
-	
+
 	<target name="Compile">
-		<mkdir dir="${class.dir}" />
-		<groovyc classpath="${classpath}" srcdir="./src" destdir="${class.dir}">
-			<javac target="1.5" debug="true" />
+		<mkdir dir="${class.dir}"/>
+		<groovyc srcdir="src" destdir="${class.dir}">
+			<classpath>
+				<fileset dir="${library.dir}" includes="*"/>
+			</classpath>
+			<javac target="1.5" debug="true"/>
 		</groovyc>
 	</target>
-	
+
 	<target name="JAR">
 		<jar destfile="${jar.file}">
 			<manifest>
-				<attribute name="Built-By" value="${user.name}" />
-				<attribute name="Main-Class" value="net.sf.anathema.charm.cards.CardCreator" />
-				<attribute name="Class-Path" value="${libraries.dir}/disy-commons-core.jar ${libraries.dir}/dom4j-1.5.jar ${libraries.dir}/groovy-all-1.5.4.jar ${libraries.dir}/charmlibrary.jar"/>
-				<section name="net/sf/anathema/charm/cards/CardCreator.class" />
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="net.sf.anathema.charm.cards.CardCreator"/>
+				<attribute name="Class-Path"
+				           value="${library.dir}/disy-commons-core.jar ${library.dir}/dom4j-1.5.jar ${library.dir}/groovy-all-1.5.4.jar ${library.dir}/charmlibrary.jar"/>
+				<section name="net/sf/anathema/charm/cards/CardCreator.class"/>
 			</manifest>
-			<fileset dir="${class.dir}" includes="**/*" />
+			<fileset dir="${class.dir}" includes="**/*"/>
 		</jar>
 	</target>
-	
-	<target name="Build Card Creator" depends="Compile, JAR, Copy project libraries">
+
+	<target name="Build Card Creator" depends="Compile, JAR">
 		<buildnumber/>
 		<zip destfile="cardcreator_b${build.number}.zip">
-			<zipfileset file="${jar.file}" prefix=""/>
-			<zipfileset dir="${libraries.dir}" prefix="${libraries.dir}" includes="*" />
+			<fileset file="${jar.file}"/>
+			<zipfileset dir="${library.dir}" prefix="${library.dir}" includes="*" excludes="*unit*"/>
 		</zip>
 	</target>
 </project>
