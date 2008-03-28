@@ -10,7 +10,8 @@ class CardCreator {
 			if (args.size() == 2){
 				convert(input, new File(args[1]))
 				return
-			} else if (input.isDirectory()){
+			}
+			else if (input.isDirectory()){
 				processAllFiles(input)
 				return
 			}

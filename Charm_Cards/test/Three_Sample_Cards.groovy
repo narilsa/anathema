@@ -1,4 +1,4 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
 class Three_Sample_Cards {static def CARDS = '''
 <cards>

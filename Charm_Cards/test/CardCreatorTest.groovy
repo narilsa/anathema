@@ -1,6 +1,9 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
+import net.sf.anathema.charm.cards.*
 import org.custommonkey.xmlunit.*
+
+
 
 
 class CardCreatorTest extends GroovyTestCase {def input = 'B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/Three_Sample_Charms.xml'

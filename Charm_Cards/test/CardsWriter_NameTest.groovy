@@ -1,7 +1,10 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
-import static net.sf.anathema.charm.cards.DummyCharmFactory.*
+import static net.sf.anathema.charm.DummyCharmFactory.*
+import net.sf.anathema.charm.cards.*
 import org.custommonkey.xmlunit.*
+
+
 
 
 

@@ -1,4 +1,4 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
 import org.custommonkey.xmlunit.*
 

@@ -1,7 +1,9 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
 import org.custommonkey.xmlunit.*
 import org.w3c.dom.*
+
+
 
 
 

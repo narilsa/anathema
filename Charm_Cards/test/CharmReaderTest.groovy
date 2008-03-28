@@ -1,6 +1,9 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
 import net.sf.anathema.character.generic.magic.*
+import net.sf.anathema.charm.cards.*
+
+
 
 class CharmReaderTest extends GroovyTestCase {def file = new File('B:/Workspaces/Anathema_Outcaste/Charm_Cards/test/net/sf/anathema/charm/cards/Three_Sample_Charms.xml')
 

@@ -7,6 +7,7 @@ import net.sf.anathema.character.generic.magic.charms.type.*
 
 
 
+
 class CardsWriter {
 
 	Writer writer

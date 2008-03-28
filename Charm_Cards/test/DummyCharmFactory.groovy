@@ -1,10 +1,12 @@
-package net.sf.anathema.charm.cards
+package net.sf.anathema.charm
 
 import net.sf.anathema.character.generic.impl.magic.charm.type.*
 import net.sf.anathema.character.generic.magic.*
 import net.sf.anathema.character.generic.magic.charms.type.*
 import net.sf.anathema.character.generic.traits.types.*
 import net.sf.anathema.character.generic.type.*
+
+
 
 
 
