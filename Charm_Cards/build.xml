@@ -36,5 +36,6 @@
 			<fileset file="${jar.file}"/>
 			<zipfileset dir="${library.dir}" prefix="${library.dir}" includes="*" excludes="*unit*"/>
 		</zip>
+		<delete dir="${class.dir}"/>
 	</target>
 </project>
