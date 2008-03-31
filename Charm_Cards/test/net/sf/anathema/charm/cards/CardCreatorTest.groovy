@@ -5,7 +5,7 @@ import org.custommonkey.xmlunit.*
 class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/Anathema_Outcaste/Charm_Cards/testresources/"
 	def input = resourceDir + '''Three_Sample_Charms.xml'''
 	def inputFolder = resourceDir + 'folder/'
-	def output = resourceDir + "Three_Sample_Cards.xml"
+	def output = resourceDir + '''Three_Sample_Cards.xml'''
 
 	void testDoesNotRunWithoutParameters(){
 		CardCreator.main()
@@ -23,7 +23,7 @@ class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/A
 			line -> builder.append(line)
 		}
 		XMLUnit.ignoreWhitespace = true
-		Diff diff = new Diff(builder.toString(), Three_Sample_Cards.CARDS);
+		Diff diff = new Diff(Three_Sample_Cards.CARDS, builder.toString());
 		assert diff.similar;
 	}
 
@@ -31,6 +31,11 @@ class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/A
 		CardCreator.main inputFolder
 		assert new File(inputFolder, "Cards_One_Sample_Charm.xml").exists()
 		assert new File(inputFolder, "Cards_Two_Sample_Charms.xml").exists()
+	}
+
+	void testIgnoresSvnFolder(){
+		CardCreator.main inputFolder
+		assert !(new File(inputFolder, "Cards_.svn").exists())
 	}
 
 	void tearDown(){

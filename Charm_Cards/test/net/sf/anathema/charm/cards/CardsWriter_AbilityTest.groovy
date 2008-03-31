@@ -4,6 +4,7 @@ import net.sf.anathema.character.generic.traits.types.*
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
+
 class CardsWriter_AbilityTest extends GroovyTestCase {static def CARD_WITH_ABILITYTYPE = '''
     <cards>
       <card>
@@ -20,23 +21,23 @@ class CardsWriter_AbilityTest extends GroovyTestCase {static def CARD_WITH_ABILI
     </cards>
   '''
 
+	def writer
+	def cardsWriter
+	def pages = [:]
+
 	void setUp(){
 		XMLUnit.ignoreWhitespace = true
+		writer = new StringWriter()
+		cardsWriter = new CardsWriter(writer: writer, pages: pages)
 	}
 
 	void testWritesAbilityElement(){
-		String testXml = new CardsWriter().write(createCharm("testId"))
-		assertDifferenceLeniently(CARD_WITH_ABILITYTYPE, testXml)
+		cardsWriter.write(createCharm([:]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_ABILITYTYPE, writer.toString())
 	}
 
 	void testWritesAbilityElementWithAbility(){
-		String testXml = new CardsWriter().write(createCharm(AbilityType.Athletics))
-		assertDifferenceLeniently(CARD_WITH_OTHER_ABILITYTYPE, testXml)
-	}
-
-	void assertDifferenceLeniently(controlXml, testXml){
-		Diff diff = new Diff(controlXml, testXml)
-		diff.overrideDifferenceListener(new LenientDifferenceListener())
-		assert diff.similar()
+		cardsWriter.write(createCharm([ability: AbilityType.Athletics]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_OTHER_ABILITYTYPE, writer.toString())
 	}
 }
