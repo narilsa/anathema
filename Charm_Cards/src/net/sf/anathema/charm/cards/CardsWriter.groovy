@@ -8,14 +8,7 @@ import net.sf.anathema.character.generic.magic.charms.type.*
 class CardsWriter {
 
 	Writer writer
-
-	CardsWriter(){
-		this(new StringWriter())
-	}
-
-	CardsWriter(Writer writer){
-		this.writer = writer
-	}
+	Map pages
 
 	def write(ICharm[] charms){
 		def xml = new MarkupBuilder(writer)
@@ -28,10 +21,17 @@ class CardsWriter {
 					stats() {
 						type(buildTypeText(charm))
 					}
+					source() {
+						title(charm.source.id)
+						page(pages[createPageKey(charm.id, charm.source.id)])
+					}
 				}
 			}
 		}
-		writer.toString()
+	}
+
+	String createPageKey(String charmId, final String bookId){
+		return bookId + "." + charmId + ".Page";
 	}
 
 	String buildTypeText(ICharm charm){
