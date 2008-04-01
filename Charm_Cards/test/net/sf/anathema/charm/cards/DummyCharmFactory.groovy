@@ -1,7 +1,9 @@
 package net.sf.anathema.charm.cards
 
+import net.sf.anathema.character.generic.impl.magic.*
 import net.sf.anathema.character.generic.impl.magic.charm.type.*
 import net.sf.anathema.character.generic.magic.*
+import net.sf.anathema.character.generic.magic.charms.*
 import net.sf.anathema.character.generic.magic.charms.type.*
 import net.sf.anathema.character.generic.rules.*
 import net.sf.anathema.character.generic.traits.types.*
@@ -12,8 +14,17 @@ class DummyCharmFactory {static ICharm createCharm(Map parameters){
 			getCharacterType: {parameters.character ?: CharacterType.LUNAR},
 			getPrimaryTraitType: {parameters.ability ?: AbilityType.Archery},
 			getCharmTypeModel: {createTypeModel(parameters)},
+			getAttributes: {createAttributes(parameters)},
 			getSource: {createSource(parameters)}] as ICharm
 }
+
+	static ICharmAttribute[] createAttributes(parameters){
+		def attributes = parameters.keywords
+		def keywords = []
+		attributes.each {attribute -> keywords.add(new CharmAttribute(attribute, true))}
+		keywords
+	}
+
 
 	static ICharmTypeModel createTypeModel(parameters){
 		CharmTypeModel model = new CharmTypeModel()

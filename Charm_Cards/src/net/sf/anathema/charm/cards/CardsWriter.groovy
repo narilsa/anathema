@@ -8,7 +8,7 @@ import net.sf.anathema.character.generic.magic.charms.type.*
 class CardsWriter {
 
 	Writer writer
-	Map pages
+	Map pages = [:]
 
 	def write(ICharm[] charms){
 		def xml = new MarkupBuilder(writer)
@@ -20,6 +20,11 @@ class CardsWriter {
 					ability(charm.primaryTraitType)
 					stats() {
 						type(buildTypeText(charm))
+					}
+					keywords() {
+						charm.attributes.each {
+							attribute -> keyword(attribute.id)
+						}
 					}
 					source() {
 						title(charm.source.id)
