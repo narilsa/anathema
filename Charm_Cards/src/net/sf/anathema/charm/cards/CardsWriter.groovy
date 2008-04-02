@@ -30,6 +30,10 @@ class CardsWriter {
 						title(charm.source.id)
 						page(pages[createPageKey(charm.id, charm.source.id)])
 					}
+					requirements() {
+						trait(charm.prerequisites[0].currentValue)
+						essence(charm.essence.currentValue)
+					}
 				}
 			}
 		}

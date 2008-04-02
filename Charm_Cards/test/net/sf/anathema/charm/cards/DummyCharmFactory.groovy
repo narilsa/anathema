@@ -6,6 +6,7 @@ import net.sf.anathema.character.generic.magic.*
 import net.sf.anathema.character.generic.magic.charms.*
 import net.sf.anathema.character.generic.magic.charms.type.*
 import net.sf.anathema.character.generic.rules.*
+import net.sf.anathema.character.generic.traits.*
 import net.sf.anathema.character.generic.traits.types.*
 import net.sf.anathema.character.generic.type.*
 
@@ -15,8 +16,16 @@ class DummyCharmFactory {static ICharm createCharm(Map parameters){
 			getPrimaryTraitType: {parameters.ability ?: AbilityType.Archery},
 			getCharmTypeModel: {createTypeModel(parameters)},
 			getAttributes: {createAttributes(parameters)},
-			getSource: {createSource(parameters)}] as ICharm
+			getSource: {createSource(parameters)},
+			getEssence: {new ValuedTraitType(OtherTraitType.Essence, parameters.essence ?: 3)},
+			getPrerequisites: {createPrerequisites(parameters)}] as ICharm
 }
+
+
+	static IGenericTrait[] createPrerequisites(parameters){
+		[new ValuedTraitType(AbilityType.Archery, parameters.trait ?: 2)]
+	}
+
 
 	static ICharmAttribute[] createAttributes(parameters){
 		def attributes = parameters.keywords
