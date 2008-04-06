@@ -2,6 +2,7 @@ package net.sf.anathema.charm.cards
 
 import net.sf.anathema.character.generic.impl.magic.charm.type.*
 import net.sf.anathema.character.generic.magic.*
+import net.sf.anathema.character.generic.magic.charms.type.*
 
 class CharmTypeStringBuilder {
 

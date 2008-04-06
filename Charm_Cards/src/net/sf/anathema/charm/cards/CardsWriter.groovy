@@ -18,7 +18,9 @@ class CardsWriter {
 					exalt(charm.characterType)
 					ability(charm.primaryTraitType)
 					stats() {
+						cost("Cost")
 						type(builder.build(charm))
+						duration(charm.duration.text)
 					}
 					keywords() {
 						charm.attributes.each {
@@ -27,7 +29,7 @@ class CardsWriter {
 					}
 					source() {
 						title(charm.source.id)
-						page(pages[createPageKey(charm.id, charm.source.id)])
+						page(pages[charm.source.id + "." + charm.id + ".Page"])
 					}
 					requirements() {
 						trait(charm.prerequisites[0].currentValue)
@@ -36,9 +38,5 @@ class CardsWriter {
 				}
 			}
 		}
-	}
-
-	String createPageKey(String charmId, final String bookId){
-		return bookId + "." + charmId + ".Page";
 	}
 }

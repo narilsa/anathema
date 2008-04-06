@@ -4,11 +4,13 @@ import net.sf.anathema.character.generic.impl.magic.*
 import net.sf.anathema.character.generic.impl.magic.charm.type.*
 import net.sf.anathema.character.generic.magic.*
 import net.sf.anathema.character.generic.magic.charms.*
+import net.sf.anathema.character.generic.magic.charms.duration.*
 import net.sf.anathema.character.generic.magic.charms.type.*
 import net.sf.anathema.character.generic.rules.*
 import net.sf.anathema.character.generic.traits.*
 import net.sf.anathema.character.generic.traits.types.*
 import net.sf.anathema.character.generic.type.*
+
 
 class DummyCharmFactory {static ICharm createCharm(Map parameters){
 	[getId: {parameters.id ?: "id"},
@@ -18,6 +20,7 @@ class DummyCharmFactory {static ICharm createCharm(Map parameters){
 			getAttributes: {createAttributes(parameters)},
 			getSource: {createSource(parameters)},
 			getEssence: {new ValuedTraitType(OtherTraitType.Essence, parameters.essence ?: 3)},
+			getDuration: {new SimpleDuration(parameters.duration)},
 			getPrerequisites: {createPrerequisites(parameters)}] as ICharm
 }
 

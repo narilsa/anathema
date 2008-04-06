@@ -4,8 +4,39 @@ import net.sf.anathema.character.generic.magic.charms.type.*
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
+class CardsWriter_StatsTest extends GroovyTestCase {
 
-class CardsWriter_StatsTest extends GroovyTestCase {static def CARD_WITH_EXTRAACTION = '''
+	static def CARD_WITH_DUMMYCOST = '''
+    <cards>
+      <card>
+        <stats>
+			<cost>Cost</cost>
+		</stats>
+      </card>
+    </cards>
+  '''
+
+	static def CARD_WITH_DURATION = '''
+    <cards>
+      <card>
+        <stats>
+			<duration>Instant</duration>
+		</stats>
+      </card>
+    </cards>
+  '''
+
+	static def CARD_WITH_PERMANENT_DURATION = '''
+    <cards>
+      <card>
+        <stats>
+			<duration>Permanent</duration>
+		</stats>
+      </card>
+    </cards>
+  '''
+
+	static def CARD_WITH_EXTRAACTION = '''
     <cards>
       <card>
         <stats>
@@ -74,49 +105,63 @@ class CardsWriter_StatsTest extends GroovyTestCase {static def CARD_WITH_EXTRAAC
     </cards>
   '''
 
+	def writer
+	def cardsWriter
+	def pages = [:]
+
 	void setUp(){
 		XMLUnit.ignoreWhitespace = true
+		writer = new StringWriter()
+		cardsWriter = new CardsWriter(writer: writer)
 	}
 
 	void testWritesStatsElementWithCharmTypeId(){
-		String testXml = new CardsWriter().write(createCharm([id: "testId"]))
-		assertDifferenceLeniently(CARD_WITH_EXTRAACTION, testXml)
+		cardsWriter.write(createCharm([id: "testId"]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_EXTRAACTION, writer.toString())
 	}
 
 	void testWritesStatsElementWithSupplementalCharmTypeId(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Supplemental]))
-		assertDifferenceLeniently(CARD_WITH_SUPPLEMENTAL, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Supplemental]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_SUPPLEMENTAL, writer.toString())
 	}
 
 	void testWritesSimpleTypeWithDVandSpeed(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -2, speed: 5]))
-		assertDifferenceLeniently(CARD_WITH_FULLSIMPLE, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Simple, dv: -2, speed: 5]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_FULLSIMPLE, writer.toString())
 	}
 
 	void testWritesSimpleTypeWithDV(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -3, speed: 6]))
-		assertDifferenceLeniently(CARD_WITH_DVSIMPLE, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Simple, dv: -3, speed: 6]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_DVSIMPLE, writer.toString())
 	}
 
 	void testWritesSimpleTypeWithSpeed(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Simple, dv: -1, speed: 3]))
-		assertDifferenceLeniently(CARD_WITH_SPEEDSIMPLE, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Simple, dv: -1, speed: 3]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_SPEEDSIMPLE, writer.toString())
 	}
 
 	void testWritesReflexiveWithSteps(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 2, step2: 3]))
-		assertDifferenceLeniently(CARD_WITH_FULLREFLEXIVE, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Reflexive, step1: 2, step2: 3]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_FULLREFLEXIVE, writer.toString())
 	}
 
 	void testOmitsNullStep(){
-		String testXml = new CardsWriter().write(createCharm([charmType: CharmType.Reflexive, step1: 4]))
-		assertDifferenceLeniently(CARD_WITH_HALFREFLEXIVE, testXml)
+		cardsWriter.write(createCharm([charmType: CharmType.Reflexive, step1: 4]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_HALFREFLEXIVE, writer.toString())
 	}
 
-	void assertDifferenceLeniently(controlXml, testXml){
-		Diff diff = new Diff(controlXml, testXml)
-		diff.overrideDifferenceListener(new LenientDifferenceListener())
-		println diff.toString()
-		assert diff.similar()
+	void testWritesDummyCost(){
+		cardsWriter.write(createCharm([:]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_DUMMYCOST, writer.toString())
+	}
+
+	void testWritesDurationElement(){
+		cardsWriter.write(createCharm([duration: "Instant"]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_DURATION, writer.toString())
+	}
+
+	void testWritesDurationText(){
+		cardsWriter.write(createCharm([duration: "Permanent"]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_PERMANENT_DURATION, writer.toString())
 	}
 }
