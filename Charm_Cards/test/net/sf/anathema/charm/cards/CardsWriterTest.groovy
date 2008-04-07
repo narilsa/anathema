@@ -4,7 +4,9 @@ import net.sf.anathema.character.generic.magic.*
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
-class CardsWriterTest extends GroovyTestCase {static def EMPTYLIST = '''
+
+class CardsWriterTest extends GroovyTestCase {
+	static def EMPTYLIST = '''
     <cards/>
   '''
 

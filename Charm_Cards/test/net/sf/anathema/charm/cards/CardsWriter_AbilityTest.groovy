@@ -4,7 +4,9 @@ import net.sf.anathema.character.generic.traits.types.*
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
-class CardsWriter_AbilityTest extends GroovyTestCase {static def CARD_WITH_ABILITYTYPE = '''
+
+class CardsWriter_AbilityTest extends GroovyTestCase {
+	static def CARD_WITH_ABILITYTYPE = '''
     <cards>
       <card>
         <ability>Archery</ability>

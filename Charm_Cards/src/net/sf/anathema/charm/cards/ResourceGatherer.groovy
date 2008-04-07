@@ -7,7 +7,6 @@ class ResourceGatherer implements IStringResourceHandler {
 	def provider = new MultiSourceStringProvider()
 	def directory
 
-
 	def gather(){
 		new File(directory).eachFile {
 			file ->

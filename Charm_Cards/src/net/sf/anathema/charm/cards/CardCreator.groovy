@@ -2,7 +2,9 @@ package net.sf.anathema.charm.cards
 
 import net.sf.anathema.character.generic.magic.*
 
-class CardCreator {def propertiesDirectory = './properties'
+class CardCreator {
+
+	def propertiesDirectory = './properties'
 	def provider
 
 	static void main(String[] args){

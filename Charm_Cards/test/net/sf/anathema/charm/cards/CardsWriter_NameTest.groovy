@@ -3,7 +3,9 @@ package net.sf.anathema.charm.cards
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
-class CardsWriter_NameTest extends GroovyTestCase {static def CARD_WITH_NAME = '''
+
+class CardsWriter_NameTest extends GroovyTestCase {
+	static def CARD_WITH_NAME = '''
     <cards>
       <card>
         <name>TESTID</name>

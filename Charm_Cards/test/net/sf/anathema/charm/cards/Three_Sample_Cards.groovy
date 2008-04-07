@@ -1,6 +1,7 @@
 package net.sf.anathema.charm.cards
 
-class Three_Sample_Cards {static def CARDS = '''
+class Three_Sample_Cards {
+	static def CARDS = '''
 <cards>
   <card>
     <name>Solar.ForcefulArrow</name>

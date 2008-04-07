@@ -2,7 +2,8 @@ package net.sf.anathema.charm.cards
 
 import org.custommonkey.xmlunit.*
 
-class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/Anathema_Outcaste/Charm_Cards/testresources/"
+class CardCreatorTest extends GroovyTestCase {
+	def resourceDir = "B:/Workspaces/Anathema_Outcaste/Charm_Cards/testresources/"
 	def input = resourceDir + '''Three_Sample_Charms.xml'''
 	def inputFolder = resourceDir + 'folder/'
 	def output = resourceDir + '''Three_Sample_Cards.xml'''

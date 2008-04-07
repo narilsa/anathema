@@ -2,7 +2,8 @@ package net.sf.anathema.charm.cards
 
 import org.junit.*
 
-class ResourceGathererTest {def resourceDir = "B:/Workspaces/Anathema_Outcaste/Charm_Cards/testresources/"
+class ResourceGathererTest {
+	def resourceDir = "B:/Workspaces/Anathema_Outcaste/Charm_Cards/testresources/"
 
 	def gatherer
 

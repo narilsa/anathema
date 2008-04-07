@@ -5,7 +5,8 @@ import static net.sf.anathema.charm.cards.DummyCharmFactory.*
 import org.custommonkey.xmlunit.*
 
 
-class CardsWriter_TypeTest extends GroovyTestCase {static def CARD_WITH_CHARACTERTYPE = '''
+class CardsWriter_TypeTest extends GroovyTestCase {
+	static def CARD_WITH_CHARACTERTYPE = '''
     <cards>
       <card>
         <exalt>Lunar</exalt>
