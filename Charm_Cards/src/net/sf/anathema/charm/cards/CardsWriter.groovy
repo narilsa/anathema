@@ -27,6 +27,9 @@ class CardsWriter {
 							attribute -> keyword(attribute.id)
 						}
 					}
+					text() {
+						para("Charm Text goes here.")
+					}
 					source() {
 						title(charm.source.id)
 						page(pages[charm.source.id + "." + charm.id + ".Page"])
