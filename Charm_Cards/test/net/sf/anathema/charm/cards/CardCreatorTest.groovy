@@ -17,13 +17,8 @@ class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/A
 
 	void testProducesExpectedOutput(){
 		CardCreator.main input, output
-		File outputFile = new File(output)
-		StringBuilder builder = new StringBuilder()
-		outputFile.eachLine() {
-			line -> builder.append(line)
-		}
 		XMLUnit.ignoreWhitespace = true
-		Diff diff = new Diff(Three_Sample_Cards.CARDS, builder.toString());
+		Diff diff = new Diff(Three_Sample_Cards.CARDS, new File(output).getText());
 		assert diff.similar;
 	}
 

@@ -32,6 +32,7 @@ class CardsWriter_SourceTest {
       <card>
         <source>
 					<title>Ex3</title>
+					<page>4512</page>
 				</source>
       </card>
     </cards>
@@ -39,32 +40,36 @@ class CardsWriter_SourceTest {
 
 	def writer
 	def cardsWriter
-	def pages = [:]
+	def page
+	def book = "book"
+	def pages = [getString: {key, arguments -> if (key == book + ".id.Page") return page}]
 
 	@Before
 	void setUp(){
 		XMLUnit.ignoreWhitespace = true
 		writer = new StringWriter()
-		cardsWriter = new CardsWriter(writer: writer, pages: pages)
+		cardsWriter = new CardsWriter(writer: writer, provider: pages)
 	}
 
 	@Test
 	void writesSourceElement(){
-		pages["book.id.Page"] = 4211
+		page = 4211
 		cardsWriter.write createCharm([:])
 		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_SOURCE, writer.toString())
 	}
 
 	@Test
 	void writesPage(){
-		pages["book.id.Page"] = 4411
-		cardsWriter.write createCharm([page: 4411])
+		page = 4411
+		cardsWriter.write createCharm([page: page])
 		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_OTHER_PAGE, writer.toString())
 	}
 
 	@Test
 	void writesBookAsId(){
-		cardsWriter.write createCharm([book: "Ex3"])
+		page = 4512
+		book = "Ex3"
+		cardsWriter.write createCharm([book: book, page: page])
 		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_OTHER_BOOK, writer.toString())
 	}
 }

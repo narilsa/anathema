@@ -5,8 +5,8 @@ import net.sf.anathema.character.generic.magic.*
 
 class CardsWriter {
 
+	def provider = [getString: {a, b -> "c"}]
 	Writer writer
-	Map pages = [:]
 	def builder = new CharmTypeStringBuilder()
 
 	def write(ICharm[] charms){
@@ -32,7 +32,7 @@ class CardsWriter {
 					}
 					source() {
 						title(charm.source.id)
-						page(pages[charm.source.id + "." + charm.id + ".Page"])
+						page(provider.getString(charm.source.id + "." + charm.id + ".Page", []))
 					}
 					requirements() {
 						trait(charm.prerequisites[0].currentValue)
