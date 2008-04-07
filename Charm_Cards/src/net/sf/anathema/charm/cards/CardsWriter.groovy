@@ -14,7 +14,7 @@ class CardsWriter {
 		xml.cards() {
 			charms.each {charm ->
 				card() {
-					name(charm.id)
+					name(provider.getString(charm.id, []))
 					exalt(charm.characterType)
 					ability(charm.primaryTraitType)
 					stats() {
