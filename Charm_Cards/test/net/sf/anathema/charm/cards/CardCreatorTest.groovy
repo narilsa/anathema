@@ -7,35 +7,40 @@ class CardCreatorTest extends GroovyTestCase {def resourceDir = "B:/Workspaces/A
 	def inputFolder = resourceDir + 'folder/'
 	def output = resourceDir + '''Three_Sample_Cards.xml'''
 
-	void testDoesNotRunWithoutParameters(){
-		CardCreator.main()
+	def creator
+
+	void setUp(){
+		creator = new CardCreator(propertiesDirectory: resourceDir)
 	}
 
-	void testDoesNotTryToOpenInputIfOnlyOneParameterIsProvided(){
-		CardCreator.main "Missing"
+
+	void testDoesNotThrowExceptionIfMissingSingleFileIsProvided(){
+		creator.run(["Missing"])
 	}
 
 	void testProducesExpectedOutput(){
-		CardCreator.main input, output
+		creator.run([input, output])
 		XMLUnit.ignoreWhitespace = true
+		println new File(output)
+		println new File(output).getText()
 		Diff diff = new Diff(Three_Sample_Cards.CARDS, new File(output).getText());
 		assert diff.similar;
 	}
 
 	void testCreatesCardFileForEveryXmlInSubfolders(){
-		CardCreator.main inputFolder
+		creator.run([inputFolder])
 		assert new File(inputFolder, "Cards_One_Sample_Charm.xml").exists()
 		assert new File(inputFolder, "Cards_Two_Sample_Charms.xml").exists()
 	}
 
 	void testIgnoresSvnFolder(){
-		CardCreator.main inputFolder
+		creator.run([inputFolder])
 		assert !(new File(inputFolder, "Cards_.svn").exists())
 	}
 
 	void tearDown(){
 		new File(output).delete();
-		new File(inputFolder, "Cards_One_Sample_Charm.xml").delete()
-		new File(inputFolder, "Cards_Two_Sample_Charms.xml").delete()
+		//new File(inputFolder, "Cards_One_Sample_Charm.xml").delete()
+		//new File(inputFolder, "Cards_Two_Sample_Charms.xml").delete()
 	}
 }

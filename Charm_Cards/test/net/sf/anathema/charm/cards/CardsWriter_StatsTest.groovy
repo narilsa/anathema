@@ -2,6 +2,7 @@ package net.sf.anathema.charm.cards
 
 import net.sf.anathema.character.generic.magic.charms.type.*
 import static net.sf.anathema.charm.cards.DummyCharmFactory.*
+import net.sf.anathema.lib.resources.*
 import org.custommonkey.xmlunit.*
 
 class CardsWriter_StatsTest extends GroovyTestCase {
@@ -20,7 +21,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     <cards>
       <card>
         <stats>
-			<duration>Instant</duration>
+			<duration>Duration.Instant</duration>
 		</stats>
       </card>
     </cards>
@@ -30,7 +31,17 @@ class CardsWriter_StatsTest extends GroovyTestCase {
     <cards>
       <card>
         <stats>
-			<duration>Permanent</duration>
+			<duration>Duration.Permanent</duration>
+		</stats>
+      </card>
+    </cards>
+  '''
+
+	static def CARD_WITH_UNTIL_DURATION = '''
+    <cards>
+      <card>
+        <stats>
+			<duration>UntilEvent.UntilEvent</duration>
 		</stats>
       </card>
     </cards>
@@ -112,7 +123,7 @@ class CardsWriter_StatsTest extends GroovyTestCase {
 	void setUp(){
 		XMLUnit.ignoreWhitespace = true
 		writer = new StringWriter()
-		cardsWriter = new CardsWriter(writer: writer)
+		cardsWriter = new CardsWriter(writer: writer, provider: [getString: {a, b -> a.startsWith("Charm.") ? a - "Charm." : null}] as IStringResourceHandler)
 	}
 
 	void testWritesStatsElementWithCharmTypeId(){
@@ -163,5 +174,10 @@ class CardsWriter_StatsTest extends GroovyTestCase {
 	void testWritesDurationText(){
 		cardsWriter.write(createCharm([duration: "Permanent"]))
 		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_PERMANENT_DURATION, writer.toString())
+	}
+
+	void testWritesDurationTextWithI18n(){
+		cardsWriter.write(createCharm([duration: "UntilEvent"]))
+		LenientDifferenceListener.assertDifferenceLeniently(CARD_WITH_UNTIL_DURATION, writer.toString())
 	}
 }

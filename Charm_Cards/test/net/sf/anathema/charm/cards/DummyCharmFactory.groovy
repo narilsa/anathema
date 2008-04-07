@@ -11,7 +11,6 @@ import net.sf.anathema.character.generic.traits.*
 import net.sf.anathema.character.generic.traits.types.*
 import net.sf.anathema.character.generic.type.*
 
-
 class DummyCharmFactory {static ICharm createCharm(Map parameters){
 	[getId: {parameters.id ?: "id"},
 			getCharacterType: {parameters.character ?: CharacterType.LUNAR},
@@ -20,9 +19,17 @@ class DummyCharmFactory {static ICharm createCharm(Map parameters){
 			getAttributes: {createAttributes(parameters)},
 			getSource: {createSource(parameters)},
 			getEssence: {new ValuedTraitType(OtherTraitType.Essence, parameters.essence ?: 3)},
-			getDuration: {new SimpleDuration(parameters.duration)},
+			getDuration: {createDuration(parameters)},
 			getPrerequisites: {createPrerequisites(parameters)}] as ICharm
 }
+
+	static IDuration createDuration(parameters){
+		def durationString = parameters.duration;
+		if (durationString?.startsWith("Until")){
+			return new UntilEventDuration(durationString)
+		}
+		new SimpleDuration(parameters.duration)
+	}
 
 
 	static IGenericTrait[] createPrerequisites(parameters){

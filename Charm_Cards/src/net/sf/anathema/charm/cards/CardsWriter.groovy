@@ -5,7 +5,7 @@ import net.sf.anathema.character.generic.magic.*
 
 class CardsWriter {
 
-	def provider = [getString: {a, b -> "c"}]
+	def provider
 	Writer writer
 	def builder = new CharmTypeStringBuilder()
 
@@ -20,7 +20,7 @@ class CardsWriter {
 					stats() {
 						cost("Cost")
 						type(builder.build(charm))
-						duration(charm.duration.text)
+						duration(charm.duration.getText(provider))
 					}
 					keywords() {
 						charm.attributes.each {

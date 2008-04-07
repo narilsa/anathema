@@ -2,7 +2,7 @@ package net.sf.anathema.charm.cards
 
 import net.sf.anathema.lib.resources.*
 
-class ResourceGatherer {
+class ResourceGatherer implements IStringResourceHandler {
 
 	def provider = new MultiSourceStringProvider()
 	def directory
@@ -17,7 +17,7 @@ class ResourceGatherer {
 		}
 	}
 
-	def supportsKey(def key){
+	boolean supportsKey(String key){
 		provider.supportsKey(key)
 	}
 
