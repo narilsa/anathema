@@ -4,7 +4,7 @@
   <Description>
     <CharacterName><![CDATA[Kayin]]></CharacterName>
     <Player><![CDATA[Urs]]></Player>
-    <Notes><![CDATA[Ahlat hat Angst vor prophezeitem Krieger und sorgt daher für Bullenmangel.]]></Notes>
+    <Notes><![CDATA[Ahlat hat Angst vor prophezeitem Krieger und sorgt daher für Bullenmangel. Der Lucky Talisman ist gegenwärtig in den Händen von Bright Spearpoint.]]></Notes>
     <Concept><![CDATA[Wandering Shepherd]]></Concept>
   </Description>
   <Statistics experienced="true">
@@ -52,8 +52,8 @@
       <Presence creationValue="2"/>
       <Resistance creationValue="3" favored="true"/>
       <Survival creationValue="3" favored="true"/>
-      <Craft>
-        <subTrait creationValue="0">
+      <Craft favored="true">
+        <subTrait creationValue="0" experiencedValue="2">
           <traitName><![CDATA[Air]]></traitName>
         </subTrait>
         <subTrait creationValue="0">
@@ -73,9 +73,9 @@
       <Lore creationValue="1"/>
       <Medicine creationValue="1"/>
       <Occult creationValue="1"/>
-      <Athletics creationValue="3" favored="true"/>
+      <Athletics creationValue="3" experiencedValue="5" favored="true"/>
       <Awareness creationValue="4" favored="true"/>
-      <Dodge creationValue="1" favored="true"/>
+      <Dodge creationValue="1"/>
       <Larceny creationValue="0"/>
       <Stealth creationValue="1"/>
       <Bureaucracy creationValue="0"/>
@@ -85,20 +85,26 @@
       <Socialize creationValue="0"/>
     </Abilities>
     <Backgrounds>
-      <Background creationValue="1"><![CDATA[Artifact - Lucky Talisman]]></Background>
-      <Background creationValue="1"><![CDATA[Backing - The Tribes]]></Background>
+      <Background creationValue="1" experiencedValue="1"><![CDATA[Artifact - Lucky Talisman]]></Background>
+      <Background creationValue="1" experiencedValue="0"><![CDATA[Backing - The Tribes]]></Background>
       <Background creationValue="1"><![CDATA[Resources]]></Background>
       <Background creationValue="3"><![CDATA[Familiar - Gakhasa]]></Background>
+      <Background creationValue="0" experiencedValue="2"><![CDATA[Artifact - Dire Lance]]></Background>
     </Backgrounds>
     <Charms>
       <CharmGroup name="Athletics" type="Solar">
         <Charm name="Solar.IncreasingStrengthExercise" experienceLearned="false"/>
         <Charm name="Solar.ThunderboltAttackPrana" experienceLearned="false"/>
         <Charm name="Solar.2ndExcellency.Athletics" experienceLearned="false"/>
+        <Charm name="Solar.LightningSpeed" experienceLearned="true"/>
+        <Charm name="Solar.RacingHareMethod" experienceLearned="true"/>
       </CharmGroup>
       <CharmGroup name="Melee" type="Solar">
         <Charm name="Solar.HungryTigerTechnique" experienceLearned="false"/>
         <Charm name="Solar.1stExcellency.Melee" experienceLearned="false"/>
+      </CharmGroup>
+      <CharmGroup name="Survival" type="Solar">
+        <Charm name="Solar.Hardship-SurvivingMendicantSpirit" experienceLearned="true"/>
       </CharmGroup>
       <CharmGroup name="Awareness" type="Solar">
         <Charm name="Solar.3rdExcellency.Awareness" experienceLearned="false"/>
@@ -114,8 +120,8 @@
             </Categories>
           </Special>
         </Charm>
-        <Charm name="Solar.Body-MendingMeditation" experienceLearned="false"/>
         <Charm name="Solar.BattleFuryFocus" experienceLearned="false"/>
+        <Charm name="Solar.Body-MendingMeditation" experienceLearned="false"/>
       </CharmGroup>
       <Combos>
         <Combo experienceLearned="false">
@@ -131,6 +137,39 @@
       <Entry points="5">
         <Description><![CDATA[Echsen in der Steppe, Tote Scavenger, Kampf im Nebel]]></Description>
       </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Erkundung der Höhle, Bubbles, Entdeckung des Brückendrachen]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Sweet Breath, Harem, Unerring Crest]]></Description>
+      </Entry>
+      <Entry points="4">
+        <Description><![CDATA[Berg, Bright Spearpoint, Auszug aus Shokai]]></Description>
+      </Entry>
+      <Entry points="4">
+        <Description><![CDATA[Bulle in der Steppe, Sweet Breath Exaltation]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Karawane, Orgie, Visionen]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Heiliges Horn, Bubbles Verführung, Krieger, Aufstieg]]></Description>
+      </Entry>
+      <Entry points="9">
+        <Description><![CDATA[Incessant Flicker, Kampf]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Allein in der Wüste, Warstrider-Vision,Tor, Sweet Breath in Macht, Trainingslager erkunden]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Erste Combo, Artefakt, Frust, Flucht]]></Description>
+      </Entry>
+      <Entry points="4">
+        <Description><![CDATA[Silver Streak]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Yeddim, Charms, Traum, Wyld Hunt]]></Description>
+      </Entry>
     </Experience>
     <AdditionalModels>
       <Model templateId="Equipment">
@@ -143,12 +182,14 @@
           </item>
           <item>
             <templateId><![CDATA[Nia (Ex. Breastplate)]]></templateId>
-            <printedStats><![CDATA[Form-fitting Armour]]></printedStats>
           </item>
           <item>
             <templateId><![CDATA[Spear]]></templateId>
-            <printedStats><![CDATA[Jabbing]]></printedStats>
-            <printedStats><![CDATA[Bracing]]></printedStats>
+          </item>
+          <item>
+            <templateId><![CDATA[Kayin's Dire Lance]]></templateId>
+            <printedStats><![CDATA[Spear]]></printedStats>
+            <printedStats><![CDATA[Lance]]></printedStats>
           </item>
         </Content>
       </Model>
@@ -177,6 +218,24 @@
             <Intimacy name="To be a warrior" complete="true">
               <Trait creationValue="4"/>
             </Intimacy>
+            <Intimacy name="Bubbles" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
+            <Intimacy name="Unerring Crest" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
+            <Intimacy name="Sweet Breath" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
+            <Intimacy name="Perseverance" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
+            <Intimacy name="Independence" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
+            <Intimacy name="Power" complete="true">
+              <Trait creationValue="0" experiencedValue="4"/>
+            </Intimacy>
           </Intimacies>
         </Content>
       </Model>
@@ -184,7 +243,7 @@
         <Content>
           <VirtueFlaw>
             <Name><![CDATA[Heart of a Volunteer]]></Name>
-            <LimitBreak><![CDATA[To have my chances of success doubted.	]]></LimitBreak>
+            <LimitBreak><![CDATA[To have my skills (at war) doubted.]]></LimitBreak>
             <Description><![CDATA[Heart hardened by frustration, I slash out at the him who doubts my courage and ability. At spearpoint, I force him to be witness to every step of my success.
 If his own life be threatened, help him I will not. (Duration: 1 day)]]></Description>
           </VirtueFlaw>
