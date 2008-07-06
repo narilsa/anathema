@@ -84,7 +84,7 @@ Aus diesen fliegen goldene Essenzfunken in die Luft, wenn sich ihre Anima entwic
       <Dodge creationValue="3"/>
       <Larceny creationValue="5"/>
       <Stealth creationValue="1" experiencedValue="3"/>
-      <Bureaucracy creationValue="1" experiencedValue="2" favored="true"/>
+      <Bureaucracy creationValue="1" experiencedValue="3" favored="true"/>
       <Linguistics creationValue="1"/>
       <Ride creationValue="0"/>
       <Sail creationValue="0"/>
@@ -172,8 +172,8 @@ Aus diesen fliegen goldene Essenzfunken in die Luft, wenn sich ihre Anima entwic
       <Entry points="9">
         <Description><![CDATA[Lord of the Dead]]></Description>
       </Entry>
-      <Entry points="5">
-        <Description><![CDATA[Preparing for Mnemon]]></Description>
+      <Entry points="10">
+        <Description><![CDATA[Mnemon Comes To Town]]></Description>
       </Entry>
     </Experience>
     <AdditionalModels>
