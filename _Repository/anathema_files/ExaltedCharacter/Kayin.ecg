@@ -43,14 +43,14 @@
     </Attributes>
     <Abilities>
       <Archery creationValue="0"/>
-      <MartialArts creationValue="0"/>
+      <MartialArts creationValue="0" experiencedValue="3"/>
       <Melee creationValue="3"/>
       <Thrown creationValue="2"/>
-      <War creationValue="0"/>
+      <War creationValue="0" experiencedValue="2"/>
       <Integrity creationValue="2"/>
       <Performance creationValue="0"/>
       <Presence creationValue="2"/>
-      <Resistance creationValue="3" favored="true"/>
+      <Resistance creationValue="3" experiencedValue="4" favored="true"/>
       <Survival creationValue="3" favored="true"/>
       <Craft favored="true">
         <subTrait creationValue="0" experiencedValue="2">
@@ -120,8 +120,9 @@
             </Categories>
           </Special>
         </Charm>
-        <Charm name="Solar.BattleFuryFocus" experienceLearned="false"/>
         <Charm name="Solar.Body-MendingMeditation" experienceLearned="false"/>
+        <Charm name="Solar.BattleFuryFocus" experienceLearned="false"/>
+        <Charm name="Solar.BloodthirstySword-DancerSpirit" experienceLearned="true"/>
       </CharmGroup>
       <Combos>
         <Combo experienceLearned="false">
@@ -170,6 +171,18 @@
       <Entry points="5">
         <Description><![CDATA[Yeddim, Charms, Traum, Wyld Hunt]]></Description>
       </Entry>
+      <Entry points="1">
+        <Description><![CDATA[3er Stunt]]></Description>
+      </Entry>
+      <Entry points="5">
+        <Description><![CDATA[Erkundung, Manse, Foreshadowing]]></Description>
+      </Entry>
+      <Entry points="4">
+        <Description><![CDATA[Forschen, Silver Streak, Bedrohung]]></Description>
+      </Entry>
+      <Entry points="0">
+        <Description><![CDATA[Wyld Hunt im Dschungel]]></Description>
+      </Entry>
     </Experience>
     <AdditionalModels>
       <Model templateId="Equipment">
@@ -185,11 +198,6 @@
           </item>
           <item>
             <templateId><![CDATA[Spear]]></templateId>
-          </item>
-          <item>
-            <templateId><![CDATA[Kayin's Dire Lance]]></templateId>
-            <printedStats><![CDATA[Spear]]></printedStats>
-            <printedStats><![CDATA[Lance]]></printedStats>
           </item>
         </Content>
       </Model>
