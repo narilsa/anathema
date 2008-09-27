@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.sf.anathema.character.generic.impl.magic.ICharmXMLConstants;
+import net.sf.anathema.character.generic.impl.magic.persistence.IGenericsBuilder;
 import net.sf.anathema.character.generic.magic.charms.CharmException;
 import net.sf.anathema.character.generic.magic.charms.ICharmAttributeRequirement;
 import net.sf.anathema.character.generic.traits.ITraitType;
@@ -12,7 +13,7 @@ import net.sf.anathema.lib.xml.ElementUtilities;
 
 import org.dom4j.Element;
 
-public class GenericAttributeRequirementBuilder extends AttributeRequirementBuilder {
+public class GenericAttributeRequirementBuilder extends AttributeRequirementBuilder implements IGenericsBuilder  {
 
   private ITraitType type;
 
