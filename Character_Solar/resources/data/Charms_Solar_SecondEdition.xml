@@ -105,23 +105,25 @@
     <prerequisite>
       <trait value="5"/>
       <essence value="5"/>
-      <genericCharmAttributeRequirement attribute="Excellency"/>
+      <genericCharmReference id="Solar.EssenceFlow"/>
     </prerequisite>
     <cost>
       <essence cost="3"/>
       <willpower cost="1"/>
     </cost>
     <duration duration="Instant"/>
-    <charmtype type="Reflexiv"/>
+  	<charmtype type="Reflexive"/>
     <charmAttribute attribute="Mortal"/>
-    <source source="DFA2" page="55"/>
+    <charmAttribute attribute="Combo-OK" visualize="true"/>
+    <charmAttribute attribute="Obvious" visualize="true"/>
+    <source source="LordsOfCreation" />
   </genericCharm>
   
   <genericCharm id="Solar.SupremePerfection" exalt="Solar">
     <prerequisite>
       <trait value="6"/>
       <essence value="6"/>
-      <genericCharmAttributeRequirement attribute="Excellency"/>
+      <genericCharmReference id="Solar.EssenceFlow"/>
     </prerequisite>
     <cost>
       <essence cost="8"/>
@@ -130,7 +132,9 @@
     <duration duration="Instant"/>
     <charmtype type="Reflexive"/>
     <charmAttribute attribute="Mortal"/>
-    <source source="DFA2" page="55"/>
+    <charmAttribute attribute="Combo-OK" visualize="true"/>
+    <charmAttribute attribute="Obvious" visualize="true"/>
+    <source source="LordsOfCreation"/>
   </genericCharm>
   
   <!-- Solar Archery -->
