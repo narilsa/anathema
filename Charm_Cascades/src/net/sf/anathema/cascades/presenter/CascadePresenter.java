@@ -16,6 +16,7 @@ import net.sf.anathema.character.generic.impl.magic.charm.CharmTree;
 import net.sf.anathema.character.generic.impl.magic.charm.MartialArtsCharmTree;
 import net.sf.anathema.character.generic.impl.rules.ExaltedEdition;
 import net.sf.anathema.character.generic.impl.rules.ExaltedRuleSet;
+import net.sf.anathema.character.generic.impl.rules.ExaltedSourceBook;
 import net.sf.anathema.character.generic.magic.ICharm;
 import net.sf.anathema.character.generic.magic.charms.ICharmGroup;
 import net.sf.anathema.character.generic.magic.charms.ICharmTree;
