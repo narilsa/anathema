@@ -28,7 +28,7 @@ public class IdentifiedRegularNode extends Identificate implements IIdentifiedRe
   private int layer = 0;
   private boolean lowerToChildren = false;
 
-  public IdentifiedRegularNode(IRegularNode[] children, String id) {
+  public IdentifiedRegularNode(String id, IRegularNode... children) {
     super(id);
     Collections.addAll(childList, children);
   }
