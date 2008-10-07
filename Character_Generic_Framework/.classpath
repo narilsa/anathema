@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Charm_Tree"/>
+	<classpathentry kind="lib" path="/Thirdparty/Graph/graphlayout.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

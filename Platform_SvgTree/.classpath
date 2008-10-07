@@ -19,5 +19,6 @@
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Platform"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/xml-apis-ext.jar"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/batik-anim.jar"/>
+	<classpathentry kind="lib" path="/Thirdparty/Graph/graphlayout.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
