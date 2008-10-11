@@ -2,6 +2,7 @@ package net.sf.anathema.character.generic.impl.magic.persistence;
 
 import static net.sf.anathema.character.generic.impl.magic.MartialArtsUtilities.MARTIAL_ARTS;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,6 +55,9 @@ public class CharmCompiler {
     if (list == null) {
       list = new ArrayList<Document>();
       charmFileTable.add(type, ruleSet, list);
+    }
+    if (resource == null) {
+      throw new CharmException("No resource given for " + typeString + "," + ruleString);
     }
     try {
       list.add(reader.read(resource));
