@@ -15,7 +15,6 @@
 	<classpathentry kind="lib" path="/Thirdparty/SVG/batik-swing.jar" sourcepath="/Thirdparty/SVG/Batik-240506-src.zip"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/batik-util.jar" sourcepath="/Thirdparty/SVG/Batik-240506-src.zip"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/batik-xml.jar" sourcepath="/Thirdparty/SVG/Batik-240506-src.zip"/>
-	<classpathentry kind="lib" path="/Thirdparty/XML/xml-apis-dom3.jar"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Platform"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/xml-apis-ext.jar"/>
 	<classpathentry kind="lib" path="/Thirdparty/SVG/batik-anim.jar"/>

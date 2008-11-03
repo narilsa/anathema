@@ -81,10 +81,7 @@
 		</library>
 		<library id="BatikDOMExt" path="${ANATHEMA_LIB}/xml-apis-ext.jar" type="code">
 			<export prefix="*"/>
-		</library>
-		<library id="BatikDOM3API" path="${ANATHEMA_LIB}/xml-apis-dom3.jar" type="code">
-			<export prefix="*"/>
-		</library>
+		</library>		
 	</runtime>
 	<extension-point id="AnathemaExtensions">
 		<parameter-def id="type" multiplicity="any">
