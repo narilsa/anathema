@@ -118,7 +118,6 @@ public class CharmCardReport extends MagicReport {
 	  }
 	  
 	  private void drawBox(Document document, PdfContentByte directContent, int row, int column) {
-		  System.out.println(getColumnWidth(document));
 		  float upperLeftX = document.left() + column * (getColumnWidth(document)) - MARGIN/2;
 		  float upperLeftY = getDocumentTop(document) - (row + 1) * getRowHeight(document);
 		  float width = getColumnWidth(document);
