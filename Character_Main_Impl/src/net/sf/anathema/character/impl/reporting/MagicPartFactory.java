@@ -14,15 +14,12 @@ import static com.itextpdf.text.Font.NORMAL;
 
 public final class MagicPartFactory {
 
-  private static final int STANDARD_FONT_SIZE = 10;
-  private static final int TITLE_FONT_SIZE = 14;
-  private static final int GROUP_FONT_SIZE = 18;
-  public static final int DESCRIPTION_FIRST_LINE_INDENT = 15;
-  public static final int TITLE_LEADING = 25;
+  private IMagicReportProperties properties;
   private final PdfReportUtils utils;
 
-  public MagicPartFactory(PdfReportUtils utils) {
+  public MagicPartFactory(PdfReportUtils utils, IMagicReportProperties properties) {
     this.utils = utils;
+    this.properties = properties;
   }
 
   public Element createFirstGroupTitle(String groupTitle) {
@@ -32,21 +29,21 @@ public final class MagicPartFactory {
   }
 
   public Paragraph createGroupTitle(String groupTitle) {
-    Chunk title = new Chunk(groupTitle, utils.createDefaultFont(GROUP_FONT_SIZE, BOLD));
-    Paragraph paragraph = new Paragraph(TITLE_LEADING, title);
+    Chunk title = new Chunk(groupTitle, utils.createDefaultFont(properties.getGroupFontSize(), BOLD));
+    Paragraph paragraph = new Paragraph(properties.getTitleLeading(), title);
     paragraph.setAlignment(Element.ALIGN_CENTER);
     return paragraph;
   }
 
   public Paragraph createCharmTitle(String charmName) {
-    Chunk title = new Chunk(charmName, utils.createDefaultFont(TITLE_FONT_SIZE, BOLD));
-    return new Paragraph(TITLE_LEADING, title);
+    Chunk title = new Chunk(charmName, utils.createDefaultFont(properties.getTitleFontSize(), BOLD));
+    return new Paragraph(properties.getTitleLeading(), title);
   }
 
   public Paragraph createDescriptionParagraph(String text) {
-    Chunk chunk = new Chunk(text, utils.createDefaultFont(STANDARD_FONT_SIZE, NORMAL));
+    Chunk chunk = new Chunk(text, utils.createDefaultFont(properties.getStandardFontSize(), NORMAL));
     Paragraph paragraph = new Paragraph(chunk);
-    paragraph.setFirstLineIndent(DESCRIPTION_FIRST_LINE_INDENT);
+    paragraph.setFirstLineIndent(properties.getDescriptionFirstLineIndent());
     paragraph.setAlignment(Element.ALIGN_JUSTIFIED);
     return paragraph;
   }
@@ -67,8 +64,8 @@ public final class MagicPartFactory {
 
   public Phrase createDataPhrase(String title, String value) {
     Phrase phrase = new Phrase();
-    phrase.add(new Chunk(title, utils.createDefaultFont(STANDARD_FONT_SIZE, BOLD)));
-    phrase.add(new Chunk(value, utils.createDefaultFont(STANDARD_FONT_SIZE, NORMAL)));
+    phrase.add(new Chunk(title, utils.createDefaultFont(properties.getStandardFontSize(), BOLD)));
+    phrase.add(new Chunk(value, utils.createDefaultFont(properties.getStandardFontSize(), NORMAL)));
     return phrase;
   }
 
