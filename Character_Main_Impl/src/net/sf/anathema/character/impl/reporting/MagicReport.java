@@ -39,53 +39,32 @@ public abstract class MagicReport extends AbstractPdfReport {
   protected IResources getResources() {
 	  return resources;
   }
-
-  protected void printSpells(MultiColumnText columnText, ICharacter character) throws DocumentException {
-    String currentGroup = "";
-    for (ISpell spell : getCurrentSpells(character)) {
-      currentGroup = printSpell(columnText, character, spell, false, currentGroup);
-    }
+  
+  protected MagicPartFactory getPartFactory() {
+	  return partFactory;
   }
 	  
-  protected String printSpell(MultiColumnText columnText, ICharacter character,
-		  ISpell spell, boolean includeSources, String currentGroup) throws DocumentException {
-	SpellStats spellStats = createSpellStats(spell);
-    String nextGroupName = getSpellGroupName(spell);
-    if (!currentGroup.equals(nextGroupName)) {
-        currentGroup = nextGroupName;
-        columnText.addElement(partFactory.createGroupTitle(currentGroup));
-    }
-    addMagicName(spell, columnText);
+  protected void printSpell(MultiColumnText columnText, ICharacter character,
+		  ISpell spell, boolean includeSources) throws DocumentException {
+    SpellStats spellStats = createSpellStats(spell);
+	addMagicName(spell, columnText);
     addSpellCost(spell, columnText);
     addSpellTarget(spellStats, columnText);
     addCharmDescription(spell, columnText);
     if (includeSources && hasCharmDescription(spell)) {
     	addMagicSources(spell, columnText);
     }
-    return currentGroup;
-  }
-
-  protected void printCharms(MultiColumnText columnText, ICharacter character) throws DocumentException {
-    String currentGroup = "";
-    for (ICharm charm : getCurrentCharms(character)) {
-      currentGroup = printCharm(columnText, character, charm, false, currentGroup);
-    }
   }
 	  
-  protected String printCharm(MultiColumnText columnText, ICharacter character,
-			  ICharm charm, boolean includeSources, String currentGroup) throws DocumentException {
+  protected void printCharm(MultiColumnText columnText, ICharacter character,
+			  ICharm charm, boolean includeSources) throws DocumentException {
 	CharmStats charmStats = createCharmStats(character, charm);
-    if (!currentGroup.equals(charmStats.getGroupName(resources))) {
-      currentGroup = charmStats.getGroupName(resources);
-      columnText.addElement(partFactory.createGroupTitle(currentGroup));
-    }
     addMagicName(charm, columnText);
     addCharmData(charmStats, charm, columnText);
     addCharmDescription(charm, columnText);
     if (includeSources && hasCharmDescription(charm)) {
       addMagicSources(charm, columnText);
     }
-    return currentGroup;
   }
 
   private void addSpellCost(ISpell charm, MultiColumnText columnText) throws DocumentException {
@@ -158,7 +137,7 @@ public abstract class MagicReport extends AbstractPdfReport {
       columnText.addElement(partFactory.createDescriptionParagraph(sourceReference));
   }
 
-  private CharmStats createCharmStats(ICharacter character, ICharm charm) {
+  protected CharmStats createCharmStats(ICharacter character, ICharm charm) {
     return new CharmStats(charm, createGenericCharacter(character));
   }
 

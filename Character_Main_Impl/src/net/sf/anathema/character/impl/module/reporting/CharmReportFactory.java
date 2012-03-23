@@ -1,6 +1,6 @@
 package net.sf.anathema.character.impl.module.reporting;
 
-import net.sf.anathema.character.impl.reporting.MagicFlatReport;
+import net.sf.anathema.character.impl.reporting.MagicTextReport;
 import net.sf.anathema.framework.IAnathemaModel;
 import net.sf.anathema.framework.initialization.IReportFactory;
 import net.sf.anathema.framework.reporting.Report;
@@ -11,6 +11,6 @@ import net.sf.anathema.lib.resources.IResources;
 public class CharmReportFactory implements IReportFactory {
 
   public Report[] createReport(IResources resources, IAnathemaModel model) {
-    return new Report[]{new MagicFlatReport(resources, model)};
+    return new Report[]{new MagicTextReport(resources, model)};
   }
 }

@@ -1,9 +1,11 @@
 package net.sf.anathema.character.impl.reporting;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.MultiColumnText;
@@ -55,6 +57,11 @@ public class CharmCardReport extends MagicReport {
 					public int getTitleLeading() {
 						return 5;
 					}
+					
+					@Override
+					public Color getTitleColor() {
+						return null;
+					}
 	    }));
 	  }
 
@@ -102,12 +109,13 @@ public class CharmCardReport extends MagicReport {
 		  // would prefer to use visitor, but no way to percolate the exception
 		  if (magic instanceof ICharm) {
 			  ICharm charm = (ICharm)magic;
-			  printCharm(columnText, character, charm, true, charm.getGroupId());
+			  printCharm(columnText, character, charm, true);
 		  }
 		  if (magic instanceof ISpell) {
 			  ISpell spell = (ISpell)magic;
-			  printSpell(columnText, character, spell, true, getSpellGroupName(spell));
+			  printSpell(columnText, character, spell, true);
 		  }
+		  character.getStatistics().getCharacterTemplate().getPresentationProperties().getCharmPresentationProperties().getColor();
 	  }
 	  
 	  private MultiColumnText getColumnText(Document document, int row, int column) {
@@ -122,6 +130,7 @@ public class CharmCardReport extends MagicReport {
 		  float upperLeftY = getDocumentTop(document) - (row + 1) * getRowHeight(document);
 		  float width = getColumnWidth(document);
 		  float height = getRowHeight(document);
+		  directContent.setColorStroke(new BaseColor(Color.LIGHT_GRAY));
 		  directContent.rectangle(upperLeftX, upperLeftY, width, height);
 		  directContent.closePathStroke();
 	  }

@@ -1,5 +1,7 @@
 package net.sf.anathema.character.impl.reporting;
 
+import java.awt.Color;
+
 public interface IMagicReportProperties {
 	
 	int getStandardFontSize();
@@ -11,4 +13,6 @@ public interface IMagicReportProperties {
 	int getDescriptionFirstLineIndent();
 	
 	int getTitleLeading();
+	
+	Color getTitleColor();
 }

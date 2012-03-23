@@ -1,5 +1,6 @@
 package net.sf.anathema.character.impl.reporting;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
@@ -37,6 +38,9 @@ public final class MagicPartFactory {
 
   public Paragraph createCharmTitle(String charmName) {
     Chunk title = new Chunk(charmName, utils.createDefaultFont(properties.getTitleFontSize(), BOLD));
+    if (properties.getTitleColor() != null) {
+    	title.setBackground(new BaseColor(properties.getTitleColor()));
+    }
     return new Paragraph(properties.getTitleLeading(), title);
   }
 
