@@ -106,6 +106,9 @@ public abstract class MagicReport extends AbstractPdfReport {
   }
 
   private void addKeywordsRow(CharmStats charmStats, PdfPTable table) {
+	if (charmStats.getDetailStrings(resources).length == 0) {
+		return;
+	}
     String keywords = Joiner.on(", ").join(charmStats.getDetailStrings(resources));
     String keywordsLabel = resources.getString("MagicReport.Keywords.Label") + ": ";
     table.addCell(partFactory.createDoubleDataCell(keywordsLabel, keywords));
