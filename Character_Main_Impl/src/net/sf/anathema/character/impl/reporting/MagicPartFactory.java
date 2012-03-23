@@ -16,10 +16,8 @@ import static com.itextpdf.text.Font.NORMAL;
 public final class MagicPartFactory {
 
   private IMagicReportProperties properties;
-  private final PdfReportUtils utils;
 
-  public MagicPartFactory(PdfReportUtils utils, IMagicReportProperties properties) {
-    this.utils = utils;
+  public MagicPartFactory(IMagicReportProperties properties) {
     this.properties = properties;
   }
 
@@ -30,14 +28,16 @@ public final class MagicPartFactory {
   }
 
   public Paragraph createGroupTitle(String groupTitle) {
-    Chunk title = new Chunk(groupTitle, utils.createDefaultFont(properties.getGroupFontSize(), BOLD));
+    Chunk title = new Chunk(groupTitle, PdfReportUtils.createFont(properties.getFontFace(),
+    		properties.getGroupFontSize(), BOLD));
     Paragraph paragraph = new Paragraph(properties.getTitleLeading(), title);
     paragraph.setAlignment(Element.ALIGN_CENTER);
     return paragraph;
   }
 
   public Paragraph createCharmTitle(String charmName) {
-    Chunk title = new Chunk(charmName, utils.createDefaultFont(properties.getTitleFontSize(), BOLD));
+    Chunk title = new Chunk(charmName, PdfReportUtils.createFont(properties.getFontFace(),
+    		properties.getTitleFontSize(), BOLD));
     if (properties.getTitleColor() != null) {
     	title.setBackground(new BaseColor(properties.getTitleColor()));
     }
@@ -45,7 +45,8 @@ public final class MagicPartFactory {
   }
 
   public Paragraph createDescriptionParagraph(String text) {
-    Chunk chunk = new Chunk(text, utils.createDefaultFont(properties.getStandardFontSize(), NORMAL));
+    Chunk chunk = new Chunk(text, PdfReportUtils.createFont(properties.getFontFace(),
+    		properties.getStandardFontSize(), NORMAL));
     Paragraph paragraph = new Paragraph(chunk);
     paragraph.setFirstLineIndent(properties.getDescriptionFirstLineIndent());
     paragraph.setAlignment(Element.ALIGN_JUSTIFIED);
@@ -68,8 +69,10 @@ public final class MagicPartFactory {
 
   public Phrase createDataPhrase(String title, String value) {
     Phrase phrase = new Phrase();
-    phrase.add(new Chunk(title, utils.createDefaultFont(properties.getStandardFontSize(), BOLD)));
-    phrase.add(new Chunk(value, utils.createDefaultFont(properties.getStandardFontSize(), NORMAL)));
+    phrase.add(new Chunk(title, PdfReportUtils.createFont(properties.getFontFace(),
+    		properties.getStandardFontSize(), BOLD)));
+    phrase.add(new Chunk(value, PdfReportUtils.createFont(properties.getFontFace(),
+    		properties.getStandardFontSize(), NORMAL)));
     return phrase;
   }
 

@@ -14,5 +14,7 @@ public interface IMagicReportProperties {
 	
 	int getTitleLeading();
 	
+	String getFontFace();
+	
 	Color getTitleColor();
 }

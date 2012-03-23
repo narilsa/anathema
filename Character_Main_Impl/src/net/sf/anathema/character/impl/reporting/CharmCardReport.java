@@ -8,6 +8,7 @@ import java.util.List;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.pdf.MultiColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -18,7 +19,6 @@ import net.sf.anathema.character.generic.magic.ISpell;
 import net.sf.anathema.character.model.ICharacter;
 import net.sf.anathema.framework.IAnathemaModel;
 import net.sf.anathema.framework.reporting.ReportException;
-import net.sf.anathema.framework.reporting.pdf.PdfReportUtils;
 import net.sf.anathema.framework.repository.IItem;
 import net.sf.anathema.lib.resources.IResources;
 
@@ -30,7 +30,7 @@ public class CharmCardReport extends MagicReport {
 	  private final int GUTTER = 20;
 
 	  public CharmCardReport(IResources resources, IAnathemaModel model) {
-	    super(resources, model, new MagicPartFactory(new PdfReportUtils(),
+	    super(resources, model, new MagicPartFactory(
 	    		new IMagicReportProperties() {
 
 					@Override
@@ -56,6 +56,11 @@ public class CharmCardReport extends MagicReport {
 					@Override
 					public int getTitleLeading() {
 						return 5;
+					}
+					
+					@Override
+					public String getFontFace() {
+						return FontFactory.HELVETICA;
 					}
 					
 					@Override

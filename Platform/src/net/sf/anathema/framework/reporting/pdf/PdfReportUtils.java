@@ -20,6 +20,14 @@ public class PdfReportUtils {
   public Font createDefaultFont(float size, int style) {
     return FontFactory.getFont(FontFactory.TIMES, size, style, BaseColor.BLACK);
   }
+  
+  public static Font createFont(String face, float size, int style) {
+	  return FontFactory.getFont(face, size, style, BaseColor.BLACK);
+  }
+  
+  public static String getDefaultFontFace() {
+	return FontFactory.TIMES;
+  }
 
   public int getStyle(ITextFormat format) {
     if (!format.isStyled()) {

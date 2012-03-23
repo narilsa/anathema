@@ -20,7 +20,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class MagicTextReport extends MagicReport {
 	
 	public MagicTextReport(IResources resources, IAnathemaModel model) {
-		super(resources, model, new MagicPartFactory(new PdfReportUtils(),
+		super(resources, model, new MagicPartFactory(
 				new IMagicReportProperties() {
 
 					@Override
@@ -46,6 +46,11 @@ public class MagicTextReport extends MagicReport {
 					@Override
 					public int getTitleLeading() {
 						return 25;
+					}
+					
+					@Override
+					public String getFontFace() {
+						return PdfReportUtils.getDefaultFontFace();
 					}
 					
 					@Override
