@@ -5,15 +5,15 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Phrase;
 import net.sf.anathema.character.abyssal.reporting.content.Abyssal2ndResonanceContent;
-import net.sf.anathema.character.reporting.pdf.content.ReportContent;
+import net.sf.anathema.character.reporting.pdf.content.ReportSession;
 import net.sf.anathema.character.reporting.pdf.rendering.boxes.virtueflaw.VirtueFlawBoxEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Bounds;
-import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractBoxContentEncoder;
+import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractContentEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.graphics.SheetGraphics;
 
 import static net.sf.anathema.character.reporting.pdf.rendering.page.IVoidStateFormatConstants.REDUCED_LINE_HEIGHT;
 
-public class Resonance2ndEditionEncoder extends AbstractBoxContentEncoder<Abyssal2ndResonanceContent> {
+public class Resonance2ndEditionEncoder extends AbstractContentEncoder<Abyssal2ndResonanceContent> {
 
   private final VirtueFlawBoxEncoder traitEncoder = new VirtueFlawBoxEncoder();
 
@@ -21,8 +21,8 @@ public class Resonance2ndEditionEncoder extends AbstractBoxContentEncoder<Abyssa
     super(Abyssal2ndResonanceContent.class);
   }
 
-  public void encode(SheetGraphics graphics, ReportContent reportContent, Bounds bounds) throws DocumentException {
-    Abyssal2ndResonanceContent content = createContent(reportContent);
+  public void encode(SheetGraphics graphics, ReportSession reportSession, Bounds bounds) throws DocumentException {
+    Abyssal2ndResonanceContent content = createContent(reportSession);
     Bounds textBounds = traitEncoder.encode(graphics, bounds, content.getLimitValue());
     Phrase phrase = new Phrase("", createDefaultFont(graphics)); //$NON-NLS-1$
     phrase.add(new Chunk(content.getFlawedVirtueLabel(), createNameFont(graphics)));

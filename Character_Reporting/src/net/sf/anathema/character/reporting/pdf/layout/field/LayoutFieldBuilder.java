@@ -61,29 +61,18 @@ public class LayoutFieldBuilder implements Height, Placement, ColumnSpan {
 
   @Override
   public ColumnSpan fillToBottomOfPage() {
-    return withHeight(alignField.getRemainingColumnHeight());
+    return withHeight(alignField.getRemainingColumnHeight(fromTop));
   }
 
   @Override
   public ColumnSpan alignBottomTo(LayoutField field) {
-    return withHeight(alignField.getHeightToBottomFrom(field));
+    float bottomLine = field.getBottomFromTop();
+    return withHeight(bottomLine - fromTop);
   }
 
   @Override
-  public Encoders spanningOneColumn() {
-    this.columnSpan = 1;
-    return this;
-  }
-
-  @Override
-  public Encoders spanningTwoColumns() {
-    this.columnSpan = 2;
-    return this;
-  }
-
-  @Override
-  public Encoders spanningThreeColumns() {
-    this.columnSpan = 3;
+  public Encoders andColumnSpan(int value) {
+    this.columnSpan = value;
     return this;
   }
 

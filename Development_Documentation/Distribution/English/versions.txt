@@ -7,20 +7,34 @@ Exalted (C) 2001-2012 by White Wolf Publishing, Inc.
 http://anathema.github.com
 
 ===------------------------------------------------------------------------------===
-			Release 3.x.x
+			Release 3.2.5
 ===------------------------------------------------------------------------------===
 
 -- Changes for Exalted 2.5 --
 * Updated Sidereal XP Cost
+* Errata'd Orichalcum
+* Changed Solar Charms
+* Changed Dragon-Blooded Charms
+* Changed Sidereal Charms
+* Added "Shield#" & "Thrust" Tags
+* Combos no longer cost XP or BP and drop some editing restrictions
+
+Anathema no longer supports First Edition or "classic" Second Edition.
+At first launch, it will create a backup ZIP of your repository, delete all 1E Characters and convert 2E characters to
+the appropriate template from the Scroll of Errata.
+If your Character spent XP to change a Combo and you tracked the expenditure in the XP table, please remove the
+entry manually to reflect the new rules.
 
 -- Features --
-* You can now enter your own descriptions for Charms and Spells. To do, CTRL-click your Charm and type away.
+* You can enter your own descriptions for Charms and Spells. To do, CTRL-click your Charm and type away.
 * New report (via "File Menu => Save as PDF"): Charm Overview. It prints your Charm data with text, just as the books do.
-* Equipment now keeps track of minimum damage
+* Equipment keeps track of minimum damage
+* [Jesse Belanger] Added Charm descriptions for the 2E Core Book. Texts taken from the official Wiki.
 
 -- Bugfixes --
 * Characters remember which weapons were attuned when saving
 * (Infernal/SWLIHN) "Precision Thought-Force Exercise" and "Orbital Impact Storm" attributed to Ink Monkeys
+* Duplication of Series possible on Windows systems
 
 ===------------------------------------------------------------------------------===
 			Release 3.1.2

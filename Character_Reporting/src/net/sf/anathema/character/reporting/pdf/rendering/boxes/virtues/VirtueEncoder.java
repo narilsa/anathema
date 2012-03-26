@@ -2,24 +2,24 @@ package net.sf.anathema.character.reporting.pdf.rendering.boxes.virtues;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfContentByte;
-import net.sf.anathema.character.reporting.pdf.content.ReportContent;
+import net.sf.anathema.character.reporting.pdf.content.ReportSession;
 import net.sf.anathema.character.reporting.pdf.content.general.NamedValue;
 import net.sf.anathema.character.reporting.pdf.content.virtues.VirtueContent;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Bounds;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Position;
-import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractBoxContentEncoder;
+import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractContentEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.general.traits.PdfTraitEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.graphics.SheetGraphics;
 import net.sf.anathema.character.reporting.pdf.rendering.page.IVoidStateFormatConstants;
 
-public class VirtueEncoder extends AbstractBoxContentEncoder<VirtueContent> {
+public class VirtueEncoder extends AbstractContentEncoder<VirtueContent> {
 
   public VirtueEncoder() {
     super(VirtueContent.class);
   }
 
-  public void encode(SheetGraphics graphics, ReportContent content, Bounds bounds) throws DocumentException {
-    VirtueContent virtueContent = createContent(content);
+  public void encode(SheetGraphics graphics, ReportSession session, Bounds bounds) throws DocumentException {
+    VirtueContent virtueContent = createContent(session);
     encodeVirtues(graphics, bounds, virtueContent);
   }
 

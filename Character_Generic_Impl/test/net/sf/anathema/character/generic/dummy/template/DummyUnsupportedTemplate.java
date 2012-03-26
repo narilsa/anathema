@@ -22,7 +22,6 @@ import net.sf.anathema.character.generic.template.creation.ICreationPoints;
 import net.sf.anathema.character.generic.template.essence.IEssenceTemplate;
 import net.sf.anathema.character.generic.template.experience.IExperiencePointCosts;
 import net.sf.anathema.character.generic.template.magic.IMagicTemplate;
-import net.sf.anathema.character.generic.template.magic.ISpellMagicTemplate;
 import net.sf.anathema.character.generic.template.presentation.IPresentationProperties;
 import net.sf.anathema.character.generic.traits.ITraitType;
 import net.sf.anathema.character.generic.traits.types.AbilityType;
@@ -88,10 +87,6 @@ public class DummyUnsupportedTemplate implements IUnsupportedTemplate, ICharacte
     throw new NotYetImplementedException();
   }
 
-  public ISpellMagicTemplate getSpellMagic() {
-    throw new NotYetImplementedException();
-  }
-
   @Override
   public IEssenceTemplate getEssenceTemplate() {
     throw new NotYetImplementedException();
@@ -117,12 +112,6 @@ public class DummyUnsupportedTemplate implements IUnsupportedTemplate, ICharacte
   }
 
   @Override
-  public boolean isLegacy()
-  {
-	  return false;
-  }
-
-  @Override
   public IAdditionalRules getAdditionalRules() {
     return additionalRules;
   }
@@ -134,7 +123,7 @@ public class DummyUnsupportedTemplate implements IUnsupportedTemplate, ICharacte
 
   @Override
   public ITraitType[] getToughnessControllingTraitTypes() {
-    return new ITraitType[]{AbilityType.Endurance};
+    return new ITraitType[]{AbilityType.Resistance};
   }
 
   @Override

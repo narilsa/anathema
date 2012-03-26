@@ -16,7 +16,7 @@ public class ExperienceBoxEncoderFactory extends AbstractEncoderFactory {
 
   @Override
   public ContentEncoder create(IResources resources, BasicContent content) {
-    return new ExperienceBoxContentEncoder();
+    return new ExperienceContentEncoder();
   }
 
   @Override

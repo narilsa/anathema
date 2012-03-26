@@ -4,25 +4,25 @@ import com.itextpdf.text.Chunk;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Phrase;
-import net.sf.anathema.character.reporting.pdf.content.ReportContent;
+import net.sf.anathema.character.reporting.pdf.content.ReportSession;
 import net.sf.anathema.character.reporting.pdf.rendering.boxes.virtueflaw.VirtueFlawBoxEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Bounds;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Position;
-import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractBoxContentEncoder;
+import net.sf.anathema.character.reporting.pdf.rendering.general.box.AbstractContentEncoder;
 import net.sf.anathema.character.reporting.pdf.rendering.graphics.SheetGraphics;
 import net.sf.anathema.character.solar.reporting.content.VirtueFlawContent;
 
 import static net.sf.anathema.character.reporting.pdf.rendering.page.IVoidStateFormatConstants.REDUCED_LINE_HEIGHT;
 
-public class VirtueFlawEncoder extends AbstractBoxContentEncoder<VirtueFlawContent> {
+public class VirtueFlawEncoder extends AbstractContentEncoder<VirtueFlawContent> {
 
   public VirtueFlawEncoder() {
     super(VirtueFlawContent.class);
   }
 
   @Override
-  public void encode(SheetGraphics graphics, ReportContent reportContent, Bounds bounds) throws DocumentException {
-    VirtueFlawContent content = createContent(reportContent);
+  public void encode(SheetGraphics graphics, ReportSession reportSession, Bounds bounds) throws DocumentException {
+    VirtueFlawContent content = createContent(reportSession);
     VirtueFlawBoxEncoder traitEncoder = new VirtueFlawBoxEncoder();
     float traitHeight = traitEncoder.encodeHeight(graphics, bounds, content.getLimitValue());
     float traitInterval = traitHeight + 1f;

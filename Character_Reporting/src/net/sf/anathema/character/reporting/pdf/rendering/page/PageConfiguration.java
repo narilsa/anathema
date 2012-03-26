@@ -2,36 +2,42 @@ package net.sf.anathema.character.reporting.pdf.rendering.page;
 
 import com.itextpdf.text.Rectangle;
 import net.sf.anathema.character.reporting.pdf.rendering.extent.Bounds;
+import net.sf.anathema.framework.reporting.pdf.PageSize;
 
-import java.awt.*;
+import java.awt.Dimension;
 
 public class PageConfiguration {
 
-  public static final int COLUMN_SPACING = 10;
-  public static final int HORIZONTAL_MARGIN = 20;
-  public static final int TOP_MARGIN = 15;
-  public static final int BOTTOM_MARGIN = 22;
-
-  public static PageConfiguration create(Rectangle pageSize) {
-    return new PageConfiguration(new Dimension((int) pageSize.getWidth(), (int) pageSize.getHeight()), TOP_MARGIN, BOTTOM_MARGIN, HORIZONTAL_MARGIN);
+  public static Offset Offset(int columnOffset) {
+    return new Offset(columnOffset);
   }
 
-  private int pageWidth;
-  private int pageHeight;
-  private int marginLeft;
-  private int marginRight;
+  public static PageConfiguration ForPortrait(PageSize pageSize) {
+    Rectangle rectangle = pageSize.getPortraitRectangle();
+    Dimension size = new Dimension((int) rectangle.getWidth(), (int) rectangle.getHeight());
+    int overallColumnCount = 3;
+    int columnSpacing = 10;
+    return new PageConfiguration(size, Margins.ForPortraitSheet(), overallColumnCount, columnSpacing);
+  }
 
-  private int marginBottom;
+  public static PageConfiguration ForLandscape(PageSize pageSize) {
+    Rectangle rectangle = pageSize.getPortraitRectangle();
+    Dimension size = new Dimension((int) rectangle.getHeight(), (int) rectangle.getWidth());
+    int overallColumnCount = 5;
+    int columnSpacing = 8;
+    return new PageConfiguration(size, Margins.ForLandscapeSheet(), overallColumnCount, columnSpacing);
+  }
 
-  private int marginTop;
+  private Dimension size;
+  private Margins margins;
+  private int overallColumnCount = 3;
+  private float columnSpacing;
 
-  private PageConfiguration(Dimension pageSize, int topMargin, int bottomMargin, int horizontalMargin) {
-    this.pageWidth = pageSize.width;
-    this.pageHeight = pageSize.height;
-    this.marginLeft = horizontalMargin;
-    this.marginRight = horizontalMargin;
-    this.marginTop = topMargin;
-    this.marginBottom = bottomMargin;
+  private PageConfiguration(Dimension size, Margins margins, int overallColumnCount, float columnSpacing) {
+    this.size = size;
+    this.margins = margins;
+    this.overallColumnCount = overallColumnCount;
+    this.columnSpacing = columnSpacing;
   }
 
   private Bounds getColumnRectangle(float spaceFromTop, float height, int columnCount, float leftColumnX) {
@@ -47,47 +53,40 @@ public class PageConfiguration {
   }
 
   public float getColumnWidth(int columnCount) {
-    float oneColumnWidth = (getContentWidth() - 2 * COLUMN_SPACING) / 3;
-    return oneColumnWidth * columnCount + COLUMN_SPACING * (columnCount - 1);
+    int spacingCount = overallColumnCount - 1;
+    float oneColumnWidth = (getContentWidth() - spacingCount * columnSpacing) / overallColumnCount;
+    return oneColumnWidth * columnCount + columnSpacing * (columnCount - 1);
   }
 
   public float getContentHeight() {
-    return pageHeight - marginBottom - marginTop;
+    return size.height - margins.bottom - margins.top;
   }
 
   public float getContentWidth() {
-    return pageWidth - marginLeft - marginRight;
+    return size.width - margins.left - margins.right;
   }
 
   public float getLowerContentY() {
-    return marginBottom;
-  }
-
-  public Bounds getFirstColumnRectangle(float spaceFromTop, float height, int columnCount) {
-    return getColumnRectangle(spaceFromTop, height, columnCount, getLeftColumnX(0));
+    return margins.bottom;
   }
 
   public float getLeftColumnX(int columnIndex) {
-    return columnIndex * (getColumnWidth() + COLUMN_SPACING) + marginLeft;
+    return columnIndex * (getColumnWidth() + columnSpacing) + margins.left;
   }
 
-  public Bounds getSecondColumnRectangle(float spaceFromTop, float height, int columnCount) {
-    return getColumnRectangle(spaceFromTop, height, columnCount, getLeftColumnX(1));
-  }
-
-  public Bounds getThirdColumnRectangle(float spaceFromTop, float height) {
-    return getColumnRectangle(spaceFromTop, height, 1, getLeftColumnX(2));
+  public Bounds getColumnRectangle(float spaceFromTop, float height, int columnCount, Offset offset) {
+    return getColumnRectangle(spaceFromTop, height, columnCount, getLeftColumnX(offset.value()));
   }
 
   public float getUpperContentY() {
-    return pageHeight - marginTop;
+    return size.height - margins.top;
   }
 
   public float getLeftX() {
-    return marginLeft;
+    return margins.left;
   }
 
   public float getPageHeight() {
-    return pageHeight;
+    return size.height;
   }
 }

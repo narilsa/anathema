@@ -44,7 +44,7 @@ public class CharmConfigurationPersister {
   public void save(Element parent, ICharacterStatistics statistics) {
     ICharacterTemplate template = statistics.getCharacterTemplate();
     ICharmTemplate charmTemplate = template.getMagicTemplate().getCharmTemplate();
-    if (!charmTemplate.canLearnCharms(statistics.getRules())) {
+    if (!charmTemplate.canLearnCharms()) {
       return;
     }
     Element charmsElement = parent.addElement(TAG_CHARMS);
@@ -78,9 +78,8 @@ public class CharmConfigurationPersister {
 
   private void saveCombos(Element parent, IComboConfiguration comboConfiguration) {
     Element combosElement = parent.addElement(TAG_COMBOS);
-    for (ICombo combo : comboConfiguration.getCurrentCombos()) {
+    for (ICombo combo : comboConfiguration.getAllCombos()) {
       Element comboElement = combosElement.addElement(TAG_COMBO);
-      comboElement.addAttribute(ATTRIB_EXPERIENCE_LEARNED, String.valueOf(!comboConfiguration.isLearnedOnCreation(combo)));
       textPersister.saveTextualDescription(comboElement, TAG_NAME, combo.getName());
       textPersister.saveTextualDescription(comboElement, TAG_DESCRIPTION, combo.getDescription());
       for (ICharm charm : combo.getCreationCharms()) {
@@ -177,7 +176,6 @@ public class CharmConfigurationPersister {
     for (Object comboElementObject : combosElement.elements(TAG_COMBO)) {
       Element comboElement = (Element) comboElementObject;
       ICombo combo = comboConfiguration.getEditCombo();
-      boolean comboExperienceLearned = isExperienceLearned(comboElement);
       textPersister.restoreTextualDescription(comboElement, TAG_NAME, combo.getName());
       textPersister.restoreTextualDescription(comboElement, TAG_DESCRIPTION, combo.getDescription());
       for (Object charmElementObject : comboElement.elements(TAG_CHARM)) {
@@ -186,7 +184,7 @@ public class CharmConfigurationPersister {
         ICharm comboCharm = charms.getCharmById(charmElement.attributeValue(ATTRIB_NAME));
         comboConfiguration.addCharmToCombo(comboCharm, charmExperiencedLearned);
       }
-      comboConfiguration.finalizeCombo(comboExperienceLearned);
+      comboConfiguration.finalizeCombo();
     }
   }
 
